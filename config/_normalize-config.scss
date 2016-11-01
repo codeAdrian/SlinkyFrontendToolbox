@@ -1,0 +1,55 @@
+/*------------------------------------------------------------*\
+                         BASIC CONFIG
+\*------------------------------------------------------------*/
+
+// Normalize html element font setup
+$normalize-base-fonts:              true;
+
+// Adds default sans-serif font for fallback
+$add-default-base-font:             false;
+
+// Removes browser-default margin on body element
+$remove-body-margins:               true;
+
+// Removes device-specific outlines for links (mobile)
+$remove-links-outline-on-mobile:    true;
+
+
+/*------------------------------------------------------------*\
+                        BROWSER SUPPORT
+\*------------------------------------------------------------*/
+
+// Enables mobile-specific normalization
+$mobile-support:                    true;
+
+// Enables <=IE9 support
+$ie9-and-less-support:              true;
+
+
+/*------------------------------------------------------------*\
+                       COMPONENT SUPPORT
+\*------------------------------------------------------------*/
+
+// Enable normalization for non-standard HTML elements
+$use-figure:                        false;
+$use-hr:                            true;
+$use-pre:                           false;
+$use-abbr:                          false;
+$use-strong-and-b:                  true;
+$use-code:                          false;
+$use-kbd:                           false;
+$use-samp:                          false;
+$use-dfn:                           false;
+$use-mark:                          false;
+$use-sub:                           false;
+$use-sup:                           false;
+$use-audio:                         false;
+$use-video:                         false;
+$use-fieldset:                      false;
+$use-legend:                        false;
+$use-progress:                      false;
+$use-details:                       false;
+$use-menu:                          false;
+$use-summary:                       false;
+$use-canvas:                        false;
+$use-template:                      false;
