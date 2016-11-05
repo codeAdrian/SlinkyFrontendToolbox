@@ -1,7 +1,6 @@
 $reset-list:"";
 @for $i from 1 through length($reset-map){
-    $reset-list: $reset-list + $element;
-
+    $reset-list: $reset-list + $reset-map[i];
     @if($i!=length($reset-map)){
         $reset-list: $reset-list +", ";
     }
@@ -17,6 +16,43 @@ $reset-list:"";
     }
 }
 
+/* HTML5 display-role reset for older browsers */
+@if ($support-older-browsers) {
+    article, aside, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section {
+        display: block;
+    }
+}
+@if($reset-body-line-height) {
+    body {
+        line-height: 1;
+    }
+}
+
+@if ($use-ul or $use-ol){
+    ol, ul {
+        list-style: none;
+    }
+}
+
+@if ($use-blockqoute or $use-q) {
+    blockquote, q {
+        quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+}
+@if ($use-table) {
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+}
+
+/*
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -37,26 +73,4 @@ time, mark, audio, video {
     font: inherit;
     vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-    display: block;
-}
-body {
-    line-height: 1;
-}
-ol, ul {
-    list-style: none;
-}
-blockquote, q {
-    quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
-}
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
+*/

@@ -1,0 +1,42 @@
+// BREAKPOINTS MIXIN
+@function translate-media-condition($c) {
+    $condMap: (
+            "screen": "only screen",
+            "print": "only print",
+            "speech": "only speech",
+            "all": "all",
+            "retina": "(-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 1.5), (min-resolution: 120dpi)",
+            "max-width": "(max-width: #{$mediaMaxWidth})",
+            "min-width": "(min-width: #{$mediaMinWidth})"
+    );
+    @return map-get( $condMap, $c );
+}
+
+@mixin media($args...) {
+    $query: "";
+    @each $arg in $args {
+        $op: "";
+        @if ( $query != "" ) {
+            $op: " and ";
+        }
+        $query: $query + $op + translate-media-condition($arg);
+    }
+    @media #{$query}  { @content; }
+}
+
+
+/* FOR CSS TO JS */
+body:before {
+    content: "smartphone";
+    display: none; /* Prevent from displaying. */
+}
+@media (min-width: 700px) {
+    body:before {
+        content: "tablet";
+    }
+}
+@media (min-width: 1100px) {
+    body:before {
+        content: "desktop";
+    }
+}
