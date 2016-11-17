@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         this.value = window.getComputedStyle(document.querySelector('body'), ':before').getPropertyValue('content').replace(/\"/g, '');
 
         // Debug
-        console.log(activeBreakpoint);
+        // console.log(activeBreakpoint);
     };
 });
 
