@@ -1,11 +1,3 @@
-@mixin retina($ratio) {
-    @media (min--moz-device-pixel-ratio: $ratio),
-    (-webkit-min-device-pixel-ratio: $ratio),
-    (min-device-pixel-ratio: $ratio) {
-        @content;
-    }
-}
-
 @mixin animation($animate...) {
     $max: length($animate);
     $animations: '';
@@ -37,16 +29,4 @@
 @mixin filters($content...) {
     -webkit-filter: $content;
     filter: $content;
-}
-
-@mixin font-face($style-name, $file, $family) {
-    $filepath: "fonts/" + $family + "/" + $file;
-    @font-face {
-        font-family: "#{$style-name}";
-        src: url($filepath + ".eot");
-        src: url($filepath + ".eot?#iefix") format('embedded-opentype'),
-        url($filepath + ".woff") format('woff'),
-        url($filepath + ".ttf")  format('truetype'),
-        url($filepath + ".svg#" + $style-name + "") format('svg');
-    }
 }
