@@ -55,3 +55,59 @@ fabric.properties
 # modules.xml
 # .idea/misc.xml
 # *.ipr
+
+/.htaccess
+/.svnignore
+/robots.txt
+/sitemap.xml
+/dev/*
+# Various IDE & OS files that should never be committed
+*.lock
+*.swp
+*~
+.DS_Store
+.buildpath
+.buildpath
+.idea
+.project
+.project
+.settings
+.thumbs
+/_notes/*
+/includes/*
+/nbproject/*
+Thumbs.db
+__MACOSX
+build.properties
+# Explicitly mark as "do not exclude/ignore these from GIT repository"
+.svn
+._.DS_Store
+#wb specific
+._markup
+includes/config.php
+.phpstorm.meta.php
+
+# Sass cache
+/skin/frontend/enterprise/zeeandco/.sass-cache/
+/skin/frontend/enterprise/zeeandco/sass/.sass-cache/
+/skin/frontend/enterprise/zeeandco_default/.sass-cache/
+/skin/frontend/enterprise/zeeandco_default/sass/.sass-cache/
+/skin/frontend/enterprise/zeeandco_men/.sass-cache/
+/skin/frontend/enterprise/zeeandco_men/sass/.sass-cache/
+/skin/frontend/enterprise/zeeandco_women/.sass-cache/
+/skin/frontend/enterprise/zeeandco_women/sass/.sass-cache/
+/skin/frontend/enterprise/zeeandco_junior/.sass-cache/
+/skin/frontend/enterprise/zeeandco_junior/sass/.sass-cache/
+
+# Sass map files
+/skin/frontend/enterprise/zeeandco/css/default.css.map
+/skin/frontend/enterprise/zeeandco_default/css/default.css.map
+/skin/frontend/enterprise/zeeandco_men/css/default.css.map
+/skin/frontend/enterprise/zeeandco_women/css/default.css.map
+/skin/frontend/enterprise/zeeandco/css/styles.css.map
+/skin/frontend/enterprise/zeeandco_junior/css/default.css.map
+
+# Gulp
+/gulpfile.js
+/package.json
+/node_modules
