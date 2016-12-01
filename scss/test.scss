@@ -1,0 +1,91 @@
+@import "styles";
+
+
+
+
+.col2-set {
+    @include container();
+
+    div {
+        box-sizing: border-box;
+        border: 1px solid black;
+    }
+
+    .col-1 {
+        @include span(6 of 12);
+    }
+
+    .col-2 {
+        @include span(last 6 of 12);
+    }
+}
+
+.col3-set {
+    @include container();
+
+    div {
+        box-sizing: border-box;
+        border: 1px solid black;
+    }
+
+    .col-1,
+    .col-2 {
+        @include span(4 of 12);
+    }
+
+    .col-3 {
+        @include span(last 4 of 12);
+    }
+}
+
+.col2-left {
+    * {
+        box-sizing: border-box;
+        border: 1px solid black;
+    }
+
+    aside {
+        @include span (3 of 12);
+    }
+
+    .content {
+        @include span(last 9 of 12);
+    }
+}
+
+h1 {
+    @include ms-respond(font-size, 5);
+    padding: ms(5) 0  ms(4) 0;
+    line-height: 1;
+
+}
+h2 {
+    @include ms-respond(font-size, 4);
+    padding: ms(4) 0 ms(3) 0;
+    line-height: 1;
+}
+h3 {
+    @include ms-respond(font-size, 3);
+    padding: ms(3) 0 ms(2) 0;
+    line-height: 1;
+}
+h4 {
+    @include ms-respond(font-size, 2);
+    padding: ms(2) 0  ms(1) 0;
+    line-height: 1;
+}
+h5 {
+    @include ms-respond(font-size, 1);
+    padding: ms(1) 0 ms(0) 0;
+    line-height: 1;
+}
+h6 {
+    @include ms-respond(font-size, 0);
+    padding: ms(0) 0 ms(-1) 0;
+    line-height: 1;
+}
+
+p {
+    padding: 0 0 ms(0) 0;
+    line-height: ms(1);
+}

@@ -1,0 +1,13 @@
+$base-font-size: 18px;
+
+$ms-base:  1rem;
+$ms-ratio: 1.25;
+
+
+// Notes on rem support to keep in mind
+// ------------------------------------
+// - IE 9 & IE 10 do not support rem units when used in the font shorthand property (the entire declaration is ignored)
+//   or when used on pseudo elements.
+// - Borders sized in "rem" disappear when the page is zoomed out in Chrome.
+// - IE 9, 10 and 11 do not support rem units when used in the "line-height" property when used on :before and :after
+//   pseudo elements

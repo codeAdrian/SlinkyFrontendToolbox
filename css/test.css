@@ -68,4 +68,91 @@ body:before {
 html {
   font-size: 18px; }
 
-/*# sourceMappingURL=styles.css.map */
+.col2-set {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto; }
+  .col2-set:after {
+    content: " ";
+    display: block;
+    clear: both; }
+  .col2-set div {
+    box-sizing: border-box;
+    border: 1px solid black; }
+  .col2-set .col-1 {
+    width: 49.15254%;
+    float: left;
+    margin-right: 1.69492%; }
+  .col2-set .col-2 {
+    width: 49.15254%;
+    float: right;
+    margin-right: 0; }
+
+.col3-set {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto; }
+  .col3-set:after {
+    content: " ";
+    display: block;
+    clear: both; }
+  .col3-set div {
+    box-sizing: border-box;
+    border: 1px solid black; }
+  .col3-set .col-1,
+  .col3-set .col-2 {
+    width: 32.20339%;
+    float: left;
+    margin-right: 1.69492%; }
+  .col3-set .col-3 {
+    width: 32.20339%;
+    float: right;
+    margin-right: 0; }
+
+.col2-left * {
+  box-sizing: border-box;
+  border: 1px solid black; }
+.col2-left aside {
+  width: 23.72881%;
+  float: left;
+  margin-right: 1.69492%; }
+.col2-left .content {
+  width: 74.57627%;
+  float: right;
+  margin-right: 0; }
+
+h1 {
+  font-size: 3.05176rem;
+  padding: 3.05176rem 0 2.44141rem 0;
+  line-height: 1; }
+
+h2 {
+  font-size: 2.44141rem;
+  padding: 2.44141rem 0 1.95313rem 0;
+  line-height: 1; }
+
+h3 {
+  font-size: 1.95313rem;
+  padding: 1.95313rem 0 1.5625rem 0;
+  line-height: 1; }
+
+h4 {
+  font-size: 1.5625rem;
+  padding: 1.5625rem 0 1.25rem 0;
+  line-height: 1; }
+
+h5 {
+  font-size: 1.25rem;
+  padding: 1.25rem 0 1rem 0;
+  line-height: 1; }
+
+h6 {
+  font-size: 1rem;
+  padding: 1rem 0 0.8rem 0;
+  line-height: 1; }
+
+p {
+  padding: 0 0 1rem 0;
+  line-height: 1.25rem; }
+
+/*# sourceMappingURL=test.css.map */

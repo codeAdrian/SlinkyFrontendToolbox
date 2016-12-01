@@ -1,4 +1,11 @@
 $breakpoints: (
-        small: 480px,
-        large: 800px
+        mobile-portrait:    320px,
+        mobile-landscape:   480px,
+        tablet-portrait:    768px,
+        tablet-landscape:   960px,
+        desktop-small:      1024px,
+        desktop-medium:     1366px,
+        desktop-large:      1600px
 );
+
+$use-ems: true;
