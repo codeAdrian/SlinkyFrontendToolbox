@@ -1,3 +1,20 @@
+/*
+ *  ______     _             _______          _ _    _ _
+ * |  ____|   | |           |__   __|        | | |  (_) |
+ * | |__   ___| |__   ___      | | ___   ___ | | | ___| |_
+ * |  __| / __| '_ \ / _ \     | |/ _ \ / _ \| | |/ / | __|
+ * | |___| (__| | | | (_) |    | | (_) | (_) | |   <| | |_
+ * |______\___|_| |_|\___/     |_|\___/ \___/|_|_|\_\_|\__|  v 1.0
+ *
+ *                                  By: Adrian Bece
+ *                                      adrian.bece@inchoo.net
+ *                                      @AdrianBDesigns
+ *
+ *                                      Frontend Developer @ Inchoo
+ */
+/*------------------------------------------------------------*\
+                           CONFIG
+\*------------------------------------------------------------*/
 /*------------------------------------------------------------*\
                          BASIC CONFIG
 \*------------------------------------------------------------*/
@@ -16,28 +33,65 @@
 /*------------------------------------------------------------*\
                        COMPONENT SUPPORT
 \*------------------------------------------------------------*/
+/*------------------------------------------------------------*\
+                   TYPOGRAPHY BASIC SETTINGS
+\*------------------------------------------------------------*/
 /*
-SCALES:
-
-$minor-second:     1.067;
-$major-second:     1.125;
-$minor-third:      1.2;
-$major-third:      1.25;
-$perfect-fourth:   1.333;
-$augmented-fourth: 1.414;
-$perfect-fifth:    1.5;
-$minor-sixth:      1.6;
-$golden:           1.618;
-$major-sixth:      1.667;
-$minor-seventh:    1.778;
-$major-seventh:    1.875;
-$octave:           2;
-$major-tenth:      2.5;
-$major-eleventh:   2.667;
-$major-twelfth:    3;
-$double-octave:    4;
-
+ * MODULAR-SCALE SETTINGS
+ *
+ * To se ems change $ms-base: 1rem; to $ms-base: 1em;
+ * To use pixels change $ms-base: 1rem; to $ms-base: $base-font-size;
  */
+/*
+ * SCALES REFERENCE
+ *
+ * $minor-second:     1.067;
+ * $major-second:     1.125;
+ * $minor-third:      1.2;
+ * $major-third:      1.25;
+ * $perfect-fourth:   1.333;
+ * $augmented-fourth: 1.414;
+ * $perfect-fifth:    1.5;
+ * $minor-sixth:      1.6;
+ * $golden:           1.618;
+ * $major-sixth:      1.667;
+ * $minor-seventh:    1.778;
+ * $major-seventh:    1.875;
+ * $octave:           2;
+ * $major-tenth:      2.5;
+ * $major-eleventh:   2.667;
+ * $major-twelfth:    3;
+ * $double-octave:    4;
+ */
+/*
+ *   Notes on rem support to keep in mind
+ *   ------------------------------------
+ * - IE 9 & IE 10 do not support rem units when used in the font shorthand property (the entire declaration is ignored)
+ *   or when used on pseudo elements.
+ * - Borders sized in "rem" disappear when the page is zoomed out in Chrome.
+ * - IE 9, 10 and 11 do not support rem units when used in the "line-height" property when used on :before and :after
+ *   pseudo elements
+ */
+/*------------------------------------------------------------*\
+                          BREAKPOINTS
+\*------------------------------------------------------------*/
+/*
+ * Add Breakpoints to the list
+ * Call breakpoints as:
+ * @include bp-min(desktop-small); -> min width
+ * @include bp-min-max(desktop-small $desktop-large); -> min width and max-width
+ */
+/*
+ * Enable px to em conversion for breakpoints
+ */
+/*
+ * Enable CSS-To-JS connection
+ * If enabled, remember to include js/EchoToolkitEngine/breakpointParser.js in your project
+ * If disabled, remember to remove it or exclude it from your project
+ */
+/*------------------------------------------------------------*\
+                     RESET / NORMALIZE
+\*------------------------------------------------------------*/
 html, body, div, span, h1, h2, h3, h4, h5, h6, p, pre, a, address, em, img, small, strong, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, footer, header, menu, nav, section {
   margin: 0;
   padding: 0;
@@ -61,6 +115,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+/*------------------------------------------------------------*\
+                       ENGINE INCLUDES
+\*------------------------------------------------------------*/
 body:before {
   content: "null";
   display: none;
@@ -87,6 +144,12 @@ body:before {
 @media (min-width: 100em) {
   body:before {
     content: "desktop-large"; } }
+/*------------------------------------------------------------*\
+                       ENGINE TOOLS
+\*------------------------------------------------------------*/
+/*------------------------------------------------------------*\
+                       THEME FILES
+\*------------------------------------------------------------*/
 html {
   font-size: 18px; }
 

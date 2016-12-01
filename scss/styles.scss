@@ -1,17 +1,54 @@
+/*
+ *  ______     _             _______          _ _    _ _
+ * |  ____|   | |           |__   __|        | | |  (_) |
+ * | |__   ___| |__   ___      | | ___   ___ | | | ___| |_
+ * |  __| / __| '_ \ / _ \     | |/ _ \ / _ \| | |/ / | __|
+ * | |___| (__| | | | (_) |    | | (_) | (_) | |   <| | |_
+ * |______\___|_| |_|\___/     |_|\___/ \___/|_|_|\_\_|\__|  v 1.0
+ *
+ *                                  By: Adrian Bece
+ *                                      adrian.bece@inchoo.net
+ *                                      @AdrianBDesigns
+ *
+ *                                      Frontend Developer @ Inchoo
+ */
+
+/*------------------------------------------------------------*\
+                           CONFIG
+\*------------------------------------------------------------*/
 
 @import "config/reset-config";
 @import "config/normalize-config";
 @import "config/typography-config";
 @import "config/breakpoints-config";
 
+
+/*------------------------------------------------------------*\
+                     RESET / NORMALIZE
+\*------------------------------------------------------------*/
+
 @import "base/reset";
 //@import "base/normalize";
+
+
+/*------------------------------------------------------------*\
+                       ENGINE INCLUDES
+\*------------------------------------------------------------*/
 
 @import "engine/susy";
 @import "engine/modular-scale";
 @import "engine/breakpointEngine";
 
+
+/*------------------------------------------------------------*\
+                       ENGINE TOOLS
+\*------------------------------------------------------------*/
+
 @import "engine/tools/_common-mixins.scss";
 @import "engine/tools/_vendor-prefixes.scss";
+
+/*------------------------------------------------------------*\
+                       THEME FILES
+\*------------------------------------------------------------*/
 
 @import "base/common-styles";

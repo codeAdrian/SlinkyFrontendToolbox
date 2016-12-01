@@ -1,15 +1,17 @@
-body:before {
-    content: "null";
-    display: none; /* Prevent from displaying. */
-}
-
-@each $key, $value in $breakpoints {
-    @if($use-ems) {
-        $value: $value/16px*1em;
+@if($use-css-to-js) {
+    body:before {
+        content: "null";
+        display: none; /* Prevent from displaying. */
     }
-    @include susy-breakpoint($value) {
-        body:before {
-            content: "#{$key}"
+
+    @each $key, $value in $breakpoints {
+        @if($use-ems) {
+            $value: $value/16px*1em;
+        }
+        @include susy-breakpoint($value) {
+            body:before {
+                content: "#{$key}"
+            }
         }
     }
 }

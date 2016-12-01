@@ -1,3 +1,14 @@
+/*------------------------------------------------------------*\
+                          BREAKPOINTS
+\*------------------------------------------------------------*/
+
+/*
+ * Add Breakpoints to the list
+ * Call breakpoints as:
+ * @include bp-min(desktop-small); -> min width
+ * @include bp-min-max(desktop-small $desktop-large); -> min width and max-width
+ */
+
 $breakpoints: (
         mobile-portrait:    320px,
         mobile-landscape:   480px,
@@ -8,4 +19,16 @@ $breakpoints: (
         desktop-large:      1600px
 );
 
+/*
+ * Enable px to em conversion for breakpoints
+ */
+
 $use-ems: true;
+
+/*
+ * Enable CSS-To-JS connection
+ * If enabled, remember to include js/EchoToolkitEngine/breakpointParser.js in your project
+ * If disabled, remember to remove it or exclude it from your project
+ */
+
+$use-css-to-js: true;

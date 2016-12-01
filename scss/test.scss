@@ -1,7 +1,13 @@
+/*------------------------------------------------------------*\
+                  STYLES FOR QUICK TESTING
+\*------------------------------------------------------------*/
+
+/*
+ * For pre-development or offline quick testing and experimentation
+ * Keep in mind to remove HTML and CSS test files when development starts
+ */
+
 @import "styles";
-
-
-
 
 .col2-set {
     @include container();
