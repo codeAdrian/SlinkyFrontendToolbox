@@ -156,7 +156,7 @@ body:before {
                        THEME FILES
 \*------------------------------------------------------------*/
 html {
-  font-size: 16px; }
+  font-size: 20px; }
 
 /* Typography debug */
 /*! module/debug */
@@ -193,7 +193,7 @@ html {
   /* offset if needed */
   /* background-position: 0 1px; */
   background-repeat: repeat;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='2' height='16' viewBox='0 0 2 16'><path fill='none' stroke='rgba(49, 125, 247, .25)' stroke-miterlimit='10' d='M0 4h2M0 8h2M0 12h2M0 16h2'/></svg>"); }
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='2' height='20' viewBox='0 0 2 20'><path fill='none' stroke='rgba(49, 125, 247, .25)' stroke-miterlimit='10' d='M0 10h2M0 20h2M0 30h2M0 40h2'/></svg>"); }
 
 /* Typography debug end */
 .col2-set {
