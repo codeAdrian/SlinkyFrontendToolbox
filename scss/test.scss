@@ -9,6 +9,51 @@
 
 @import "styles";
 
+
+/* Typography debug */
+
+/*! module/debug */
+
+/*
+  using box-shadow instead of borders
+  doesn't change overall composition
+  because they are inline
+*/
+.debug-stroke *:not(body):not(html) {
+    box-sizing: border-box;
+    box-shadow: inset 0 0 1px 1px rgba(253, 30, 186, 0.3);
+}
+
+.debug-box *:not(body):not(html) {
+    box-sizing: border-box;
+    background-color: rgba(10, 10, 10, 0.05);
+}
+
+/*
+
+  the svg is depending on main line-height
+  here I'm using 32px on body
+  and I like to have a grid-grain of 4
+  so 8px is the unit of choice (line-height 32px / 4)
+  4 lines - one every 8px:
+  d='M0 8h2M0 16h2M0 24h2M0 32h2
+
+  Note: height and viewbox depend on this 8px too
+
+  sure – a single line would do the job too
+  but I like to have the option to colorize
+  in another way later on
+
+*/
+.debug-baseline {
+    /* offset if needed */
+    /* background-position: 0 1px; */
+    background-repeat: repeat;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='2' height='16' viewBox='0 0 2 16'><path fill='none' stroke='rgba(49, 125, 247, .25)' stroke-miterlimit='10' d='M0 4h2M0 8h2M0 12h2M0 16h2'/></svg>");
+}
+
+/* Typography debug end */
+
 .col2-set {
     @include container();
 
@@ -62,36 +107,36 @@
 h1 {
     @include ms-respond(font-size, 5);
     padding: ms(5) 0  ms(4) 0;
-    line-height: 1;
+    @include ms-respond(line-height, 5);
 
 }
 h2 {
     @include ms-respond(font-size, 4);
     padding: ms(4) 0 ms(3) 0;
-    line-height: 1;
+    @include ms-respond(line-height, 4);
 }
 h3 {
     @include ms-respond(font-size, 3);
     padding: ms(3) 0 ms(2) 0;
-    line-height: 1;
+    @include ms-respond(line-height, 3);
 }
 h4 {
     @include ms-respond(font-size, 2);
     padding: ms(2) 0  ms(1) 0;
-    line-height: 1;
+    @include ms-respond(line-height, 2);
 }
 h5 {
     @include ms-respond(font-size, 1);
     padding: ms(1) 0 ms(0) 0;
-    line-height: 1;
+    @include ms-respond(line-height, 5);
 }
 h6 {
     @include ms-respond(font-size, 0);
     padding: ms(0) 0 ms(-1) 0;
-    line-height: 1;
+    @include ms-respond(line-height, 0);
 }
 
 p {
     padding: 0 0 ms(0) 0;
-    line-height: ms(1);
+    @include ms-respond(line-height, 1);
 }

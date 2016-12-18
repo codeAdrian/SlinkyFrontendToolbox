@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*------------------------------------------------------------*\
                   STYLES FOR QUICK TESTING
 \*------------------------------------------------------------*/
@@ -13,11 +14,11 @@
  * | |___| (__| | | | (_) |    | | (_) | (_) | |   <| | |_
  * |______\___|_| |_|\___/     |_|\___/ \___/|_|_|\_\_|\__|  v 1.0
  *
+ *                                  Echo Team Frontend Toolkit
  *                                  By: Adrian Bece
+ *
  *                                      adrian.bece@inchoo.net
  *                                      @AdrianBDesigns
- *
- *                                      Frontend Developer @ Inchoo
  */
 /*------------------------------------------------------------*\
                            CONFIG
@@ -152,14 +153,49 @@ body:before {
   body:before {
     content: "desktop-large"; } }
 /*------------------------------------------------------------*\
-                       ENGINE TOOLS
-\*------------------------------------------------------------*/
-/*------------------------------------------------------------*\
                        THEME FILES
 \*------------------------------------------------------------*/
 html {
-  font-size: 18px; }
+  font-size: 16px; }
 
+/* Typography debug */
+/*! module/debug */
+/*
+  using box-shadow instead of borders
+  doesn't change overall composition
+  because they are inline
+*/
+.debug-stroke *:not(body):not(html) {
+  box-sizing: border-box;
+  box-shadow: inset 0 0 1px 1px rgba(253, 30, 186, 0.3); }
+
+.debug-box *:not(body):not(html) {
+  box-sizing: border-box;
+  background-color: rgba(10, 10, 10, 0.05); }
+
+/*
+
+  the svg is depending on main line-height
+  here I'm using 32px on body
+  and I like to have a grid-grain of 4
+  so 8px is the unit of choice (line-height 32px / 4)
+  4 lines - one every 8px:
+  d='M0 8h2M0 16h2M0 24h2M0 32h2
+
+  Note: height and viewbox depend on this 8px too
+
+  sure ÔÇô a single line would do the job too
+  but I like to have the option to colorize
+  in another way later on
+
+*/
+.debug-baseline {
+  /* offset if needed */
+  /* background-position: 0 1px; */
+  background-repeat: repeat;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='2' height='16' viewBox='0 0 2 16'><path fill='none' stroke='rgba(49, 125, 247, .25)' stroke-miterlimit='10' d='M0 4h2M0 8h2M0 12h2M0 16h2'/></svg>"); }
+
+/* Typography debug end */
 .col2-set {
   max-width: 100%;
   margin-left: auto;
@@ -216,32 +252,32 @@ html {
 h1 {
   font-size: 3.05176rem;
   padding: 3.05176rem 0 2.44141rem 0;
-  line-height: 1; }
+  line-height: 3.05176rem; }
 
 h2 {
   font-size: 2.44141rem;
   padding: 2.44141rem 0 1.95313rem 0;
-  line-height: 1; }
+  line-height: 2.44141rem; }
 
 h3 {
   font-size: 1.95313rem;
   padding: 1.95313rem 0 1.5625rem 0;
-  line-height: 1; }
+  line-height: 1.95313rem; }
 
 h4 {
   font-size: 1.5625rem;
   padding: 1.5625rem 0 1.25rem 0;
-  line-height: 1; }
+  line-height: 1.5625rem; }
 
 h5 {
   font-size: 1.25rem;
   padding: 1.25rem 0 1rem 0;
-  line-height: 1; }
+  line-height: 3.05176rem; }
 
 h6 {
   font-size: 1rem;
   padding: 1rem 0 0.8rem 0;
-  line-height: 1; }
+  line-height: 1rem; }
 
 p {
   padding: 0 0 1rem 0;

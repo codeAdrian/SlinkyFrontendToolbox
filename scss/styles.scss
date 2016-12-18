@@ -6,11 +6,11 @@
  * | |___| (__| | | | (_) |    | | (_) | (_) | |   <| | |_
  * |______\___|_| |_|\___/     |_|\___/ \___/|_|_|\_\_|\__|  v 1.0
  *
+ *                                  Echo Team Frontend Toolkit
  *                                  By: Adrian Bece
+ *
  *                                      adrian.bece@inchoo.net
  *                                      @AdrianBDesigns
- *
- *                                      Frontend Developer @ Inchoo
  */
 
 /*------------------------------------------------------------*\
@@ -38,14 +38,6 @@
 @import "engine/susy";
 @import "engine/modular-scale";
 @import "engine/breakpointEngine";
-
-
-/*------------------------------------------------------------*\
-                       ENGINE TOOLS
-\*------------------------------------------------------------*/
-
-@import "engine/tools/_common-mixins.scss";
-@import "engine/tools/_vendor-prefixes.scss";
 
 /*------------------------------------------------------------*\
                        THEME FILES
