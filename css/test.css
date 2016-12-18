@@ -98,6 +98,19 @@
  * If disabled, remember to remove it or exclude it from your project
  */
 /*------------------------------------------------------------*\
+                      SUSY CONFIG AND MAPS
+\*------------------------------------------------------------*/
+/*
+ * Default Susy config with default values
+ * Use this as a template for adding more maps and configurations.
+ * It can be edited or removed if defaults won't be changed.
+ *
+ * More info: http://susydocs.oddbird.net/en/latest/settings/
+ */
+/*
+ * Custom Susy maps
+ */
+/*------------------------------------------------------------*\
                      RESET / NORMALIZE
 \*------------------------------------------------------------*/
 /*------------------------------------------------------------*\
