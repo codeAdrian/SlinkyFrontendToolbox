@@ -100,6 +100,9 @@
 /*------------------------------------------------------------*\
                      RESET / NORMALIZE
 \*------------------------------------------------------------*/
+/*------------------------------------------------------------*\
+                               RESET
+\*------------------------------------------------------------*/
 html, body, div, span, h1, h2, h3, h4, h5, h6, p, pre, a, address, em, img, small, strong, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, footer, header, menu, nav, section {
   margin: 0;
   padding: 0;
@@ -125,6 +128,9 @@ table {
 
 /*------------------------------------------------------------*\
                        ENGINE INCLUDES
+\*------------------------------------------------------------*/
+/*------------------------------------------------------------*\
+            GENERATE CSS-TO-JS PSEUDO-CLASS HINTS
 \*------------------------------------------------------------*/
 body:before {
   content: "null";
@@ -153,8 +159,20 @@ body:before {
   body:before {
     content: "desktop-large"; } }
 /*------------------------------------------------------------*\
+                       MIN-WIDTH BREAKPOINT
+\*------------------------------------------------------------*/
+/*------------------------------------------------------------*\
+                 MIN-WIDTH AND MAX-WIDTH BREAKPOINT
+\*------------------------------------------------------------*/
+/*------------------------------------------------------------*\
                        THEME FILES
 \*------------------------------------------------------------*/
+/*------------------------------------------------------------*\
+                       COMMON STYLES
+\*------------------------------------------------------------*/
+/**
+ * Sets root base font size which is used by typography
+ */
 html {
   font-size: 20px; }
 
@@ -251,36 +269,36 @@ html {
 
 h1 {
   font-size: 3.05176rem;
-  padding: 3.05176rem 0 2.44141rem 0;
+  padding: 2.44141rem 0 1.5625rem 0;
   line-height: 3.05176rem; }
 
 h2 {
   font-size: 2.44141rem;
-  padding: 2.44141rem 0 1.95313rem 0;
+  padding: 1.5625rem 0 1.25rem 0;
   line-height: 2.44141rem; }
 
 h3 {
   font-size: 1.95313rem;
-  padding: 1.95313rem 0 1.5625rem 0;
+  padding: 1.5625rem 0 1.25rem 0;
   line-height: 1.95313rem; }
 
 h4 {
   font-size: 1.5625rem;
-  padding: 1.5625rem 0 1.25rem 0;
+  padding: 1.5625rem 0 0.8rem 0;
   line-height: 1.5625rem; }
 
 h5 {
   font-size: 1.25rem;
-  padding: 1.25rem 0 1rem 0;
-  line-height: 3.05176rem; }
+  padding: 0.8rem 0 0.64rem 0;
+  line-height: 1.25rem; }
 
 h6 {
   font-size: 1rem;
-  padding: 1rem 0 0.8rem 0;
+  padding: 0.8rem 0 0.64rem 0;
   line-height: 1rem; }
 
 p {
-  padding: 0 0 1rem 0;
+  padding: 0 0 0.64rem 0;
   line-height: 1.25rem; }
 
 /*# sourceMappingURL=test.css.map */

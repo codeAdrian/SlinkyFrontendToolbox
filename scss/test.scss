@@ -106,37 +106,37 @@
 
 h1 {
     @include ms-respond(font-size, 5);
-    padding: ms(5) 0  ms(4) 0;
+    padding: ms(4) 0  ms(2) 0;
     @include ms-respond(line-height, 5);
 
 }
 h2 {
     @include ms-respond(font-size, 4);
-    padding: ms(4) 0 ms(3) 0;
+    padding: ms(2) 0 ms(1) 0;
     @include ms-respond(line-height, 4);
 }
 h3 {
     @include ms-respond(font-size, 3);
-    padding: ms(3) 0 ms(2) 0;
+    padding: ms(2) 0 ms(1) 0;
     @include ms-respond(line-height, 3);
 }
 h4 {
     @include ms-respond(font-size, 2);
-    padding: ms(2) 0  ms(1) 0;
+    padding: ms(2) 0 ms(-1) 0;
     @include ms-respond(line-height, 2);
 }
 h5 {
     @include ms-respond(font-size, 1);
-    padding: ms(1) 0 ms(0) 0;
-    @include ms-respond(line-height, 5);
+    padding: ms(-1) 0 ms(-2) 0;
+    @include ms-respond(line-height, 1);
 }
 h6 {
     @include ms-respond(font-size, 0);
-    padding: ms(0) 0 ms(-1) 0;
+    padding: ms(-1) 0 ms(-2) 0;
     @include ms-respond(line-height, 0);
 }
 
 p {
-    padding: 0 0 ms(0) 0;
+    padding: 0 0 ms(-2) 0;
     @include ms-respond(line-height, 1);
 }
