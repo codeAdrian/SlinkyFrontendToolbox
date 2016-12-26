@@ -1,22 +1,60 @@
 /*------------------------------------------------------------*\
-                 TRANSACTIONAL EMAIL STYLES
+                      TRANSACTIONAL EMAILS
 \*------------------------------------------------------------*/
 
 /*
  * PULP EMAIL TEMPLATE
- * Use http://pulp.glitchpack.com/ To generate bulletproof responsive Email templates
+ * Use http://pulp.glitchpack.com/ To generate bulletproof
+ * responsive Email templates
+ *
+ * Custom changes:
+ * Added SASS variables.
+ * Change the generated code to SASS
+ *
  */
+
+
+/*------------------------------------------------------------*\
+                 TRANSACTIONAL EMAIL VARIABLES
+\*------------------------------------------------------------*/
+
+/* Colors */
+$email-background: #ffffff;
+$email-font-color: #333333;
+$email-link-color: #ee6a56;
+
+/* Typography */
+$email-font-family: sans-serif;
+
+$email-base-font-size: 14px;
+$email-h1-font-size: 21px;
+$email-h2-font-size: 18px;
+$email-h3-font-size: 16px;
+
+$email-h1-bottom-margin: 18px;
+$email-h2-bottom-margin: 12px;
+$email-h3-bottom-margin: 8px;
+
+/* Layout */
+$email-main-width: 600px; /* Make sure to also change this value in the email templates */
+$email-inner-padding: 10px;
+$email-vertical-padding: 10px;
+$email-sidebar-width: 200px;
+
+/*------------------------------------------------------------*\
+                 TRANSACTIONAL EMAIL STYLES
+\*------------------------------------------------------------*/
 
 body {
     margin: 0 !important;
     padding: 0;
-    background-color: #ffffff;
+    background-color: $email-background;
 }
 
 table {
     border-spacing: 0;
-    font-family: sans-serif;
-    color: #333333;
+    font-family: $email-font-family;
+    color: $email-font-color;
 }
 
 td {
@@ -39,24 +77,24 @@ div[style*="margin: 16px 0"] {
 }
 
 .webkit {
-    max-width: 600px;
+    max-width: $email-main-width;
     margin: 0 auto;
 }
 
 .outer {
     Margin: 0 auto;
     width: 100%;
-    max-width: 600px;
+    max-width: $email-main-width;
 }
 
 .full-width-image img {
     width: 100%;
-    max-width: 600px;
+    max-width: $email-main-width;
     height: auto;
 }
 
 .inner {
-    padding: 10px;
+    padding: $email-inner-padding;
 }
 
 p {
@@ -64,20 +102,26 @@ p {
 }
 
 a {
-    color: #ee6a56;
+    color: $email-link-color;
     text-decoration: underline;
 }
 
 .h1 {
-    font-size: 21px;
+    font-size: $email-h1-font-size;
     font-weight: bold;
-    Margin-bottom: 18px;
+    Margin-bottom: $email-h1-bottom-margin;
 }
 
 .h2 {
-    font-size: 18px;
+    font-size: $email-h2-font-size;
     font-weight: bold;
-    Margin-bottom: 12px;
+    Margin-bottom: $email-h2-bottom-margin;
+}
+
+.h2 {
+    font-size: $email-h3-font-size;
+    font-weight: bold;
+    Margin-bottom: $email-h3-bottom-margin;
 }
 
 /* One column layout */
@@ -86,7 +130,7 @@ a {
         text-align: left;
     }
     p {
-        font-size: 14px;
+        font-size: $email-base-font-size;
         Margin-bottom: 10px;
     }
 }
@@ -98,24 +142,24 @@ a {
 
     .column {
         width: 100%;
-        max-width: 300px;
+        max-width: $email-main-width/2;
         display: inline-block;
         vertical-align: top;
     }
 
     .contents {
-        font-size: 14px;
+        font-size: $email-base-font-size;
         text-align: left;
     }
 
     img {
         width: 100%;
-        max-width: 280px;
+        max-width: $email-main-width/2-2*$email-inner-padding;
         height: auto;
     }
 
     .text {
-        padding-top: 10px;
+        padding-top: $email-vertical-padding;
     }
 }
 
@@ -127,29 +171,29 @@ a {
 .three-column {
     text-align: center;
     font-size: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: $email-vertical-padding;
+    padding-bottom: $email-vertical-padding;
 
     .column {
         width: 100%;
-        max-width: 200px;
+        max-width: $email-main-width/3;
         display: inline-block;
         vertical-align: top;
     }
 
     .contents {
-        font-size: 14px;
+        font-size: $email-base-font-size;
         text-align: center;
     }
 
     img {
         width: 100%;
-        max-width: 180px;
+        max-width: $email-main-width/3-2*$email-inner-padding;
         height: auto;
     }
 
     .text {
-        padding-top: 10px;
+        padding-top: $email-vertical-padding;
     }
 }
 
@@ -187,11 +231,11 @@ a {
     }
 
     .left {
-        max-width: 100px;
+        max-width: $email-sidebar-width;
     }
 
     .right {
-        max-width: 500px;
+        max-width: $email-main-width - $email-sidebar-width;
     }
 
     .img {
@@ -201,12 +245,12 @@ a {
     }
 
     .contents {
-        font-size: 14px;
+        font-size: $email-base-font-size;
         text-align: center;
     }
 
     a {
-        color: #85ab70;
+        color: $email-link-color;
     }
 }
 
@@ -222,11 +266,11 @@ a {
     }
 
     .left {
-        max-width: 100px;
+        max-width: $email-sidebar-width;
     }
 
     .right {
-        max-width: 500px;
+        max-width: $email-main-width - $email-sidebar-width;
     }
 
     .img {
@@ -236,11 +280,11 @@ a {
     }
 
     .contents {
-        font-size: 14px;
+        font-size: $email-base-font-size;
         text-align: center;
     }
 
     a {
-        color: #70bbd9;
+        color: $email-link-color;
     }
 }

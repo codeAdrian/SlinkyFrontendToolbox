@@ -1,10 +1,26 @@
 /*------------------------------------------------------------*\
-                 TRANSACTIONAL EMAIL STYLES
+                      TRANSACTIONAL EMAILS
 \*------------------------------------------------------------*/
 /*
  * PULP EMAIL TEMPLATE
- * Use http://pulp.glitchpack.com/ To generate bulletproof responsive Email templates
+ * Use http://pulp.glitchpack.com/ To generate bulletproof
+ * responsive Email templates
+ *
+ * Custom changes:
+ * Added SASS variables.
+ * Change the generated code to SASS
+ *
  */
+/*------------------------------------------------------------*\
+                 TRANSACTIONAL EMAIL VARIABLES
+\*------------------------------------------------------------*/
+/* Colors */
+/* Typography */
+/* Layout */
+/* Make sure to also change this value in the email templates */
+/*------------------------------------------------------------*\
+                 TRANSACTIONAL EMAIL STYLES
+\*------------------------------------------------------------*/
 body {
   margin: 0 !important;
   padding: 0;
@@ -63,6 +79,11 @@ a {
   font-size: 18px;
   font-weight: bold;
   Margin-bottom: 12px; }
+
+.h2 {
+  font-size: 16px;
+  font-weight: bold;
+  Margin-bottom: 8px; }
 
 /* One column layout */
 .one-column .contents {
@@ -139,9 +160,9 @@ a {
     display: inline-block;
     vertical-align: middle; }
   .left-sidebar .left {
-    max-width: 100px; }
+    max-width: 200px; }
   .left-sidebar .right {
-    max-width: 500px; }
+    max-width: 400px; }
   .left-sidebar .img {
     width: 100%;
     max-width: 80px;
@@ -150,7 +171,7 @@ a {
     font-size: 14px;
     text-align: center; }
   .left-sidebar a {
-    color: #85ab70; }
+    color: #ee6a56; }
 
 /* Right sidebar layout */
 .right-sidebar {
@@ -161,9 +182,9 @@ a {
     display: inline-block;
     vertical-align: middle; }
   .right-sidebar .left {
-    max-width: 100px; }
+    max-width: 200px; }
   .right-sidebar .right {
-    max-width: 500px; }
+    max-width: 400px; }
   .right-sidebar .img {
     width: 100%;
     max-width: 80px;
@@ -172,6 +193,6 @@ a {
     font-size: 14px;
     text-align: center; }
   .right-sidebar a {
-    color: #70bbd9; }
+    color: #ee6a56; }
 
 /*# sourceMappingURL=email-noninline.css.map */
