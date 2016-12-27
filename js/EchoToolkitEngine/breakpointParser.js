@@ -5,7 +5,7 @@
 var activeBreakpoint = {};
 
 // When the page has finished loading, determine which breakpoint is currently active
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", function() {
     activeBreakpoint.refreshValue = function () {
         this.value = window.getComputedStyle(document.querySelector('body'), ':before').getPropertyValue('content').replace(/\"/g, '');
 

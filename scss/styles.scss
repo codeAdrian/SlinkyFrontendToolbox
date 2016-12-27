@@ -21,16 +21,7 @@
 @import "config/normalize-config";
 @import "config/typography-config";
 @import "config/breakpoints-config";
-@import "config/_susy-config";
-
-
-/*------------------------------------------------------------*\
-                     RESET / NORMALIZE
-\*------------------------------------------------------------*/
-
-@import "base/reset";
-//@import "base/normalize";
-
+@import "config/susy-config";
 
 /*------------------------------------------------------------*\
                        ENGINE INCLUDES
@@ -41,7 +32,15 @@
 @import "engine/breakpointEngine";
 
 /*------------------------------------------------------------*\
+                     RESET / NORMALIZE
+\*------------------------------------------------------------*/
+
+@import "base/reset";
+//@import "base/normalize";
+
+/*------------------------------------------------------------*\
                        THEME FILES
 \*------------------------------------------------------------*/
 
+@import "base/mixins";
 @import "base/common-styles";

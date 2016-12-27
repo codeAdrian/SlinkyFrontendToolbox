@@ -3,7 +3,7 @@
 \*------------------------------------------------------------*/
 @if($use-css-to-js) {
     body:before {
-        content: "null";
+        content: "mobile";
         display: none; /* Prevent from displaying. */
     }
 

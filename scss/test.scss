@@ -137,6 +137,6 @@ h6 {
 }
 
 p {
-    padding: 0 0 ms(-2) 0;
+    padding: 0 0 ms(0) 0;
     @include ms-respond(line-height, 1);
 }
