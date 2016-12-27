@@ -14,22 +14,23 @@
  */
 
 /*------------------------------------------------------------*\
-                           CONFIG
+                    CONFIG & MIXINS
 \*------------------------------------------------------------*/
 
-@import "config/reset-config";
-@import "config/normalize-config";
-@import "config/typography-config";
-@import "config/breakpoints-config";
-@import "config/susy-config";
+@import "helpers/reset-config";
+@import "helpers/normalize-config";
+@import "helpers/typography-config";
+@import "helpers/breakpoints-config";
+@import "helpers/susy-config";
+@import "helpers/_mixins";
 
 /*------------------------------------------------------------*\
-                       ENGINE INCLUDES
+                    VENDOR INCLUDES
 \*------------------------------------------------------------*/
 
-@import "engine/susy";
-@import "engine/modular-scale";
-@import "engine/breakpointEngine";
+@import "vendor/susy";
+@import "vendor/modular-scale";
+@import "vendor/breakpointEngine";
 
 /*------------------------------------------------------------*\
                      RESET / NORMALIZE
@@ -42,5 +43,7 @@
                        THEME FILES
 \*------------------------------------------------------------*/
 
-@import "base/mixins";
-@import "base/common-styles";
+@import "components/forms";
+@import "components/media";
+@import "components/page";
+@import "components/tables";

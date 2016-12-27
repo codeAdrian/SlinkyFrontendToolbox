@@ -1,5 +1,5 @@
 /*------------------------------------------------------------*\
-                            MIXINS
+                       GENERAL MIXINS
 \*------------------------------------------------------------*/
 
 /*
@@ -14,3 +14,13 @@
         clear: both;
     }
 }
+
+
+/*------------------------------------------------------------*\
+                     VENDOR PREFIXES MIXINS
+\*------------------------------------------------------------*/
+
+/*
+ * Use http://caniuse.com/ and http://shouldiprefix.com/ to determine which
+ * prefixes should be used in the mixins to avoid code bloat.
+ */

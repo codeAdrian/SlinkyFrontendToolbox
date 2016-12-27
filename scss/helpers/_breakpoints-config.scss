@@ -4,9 +4,9 @@
 
 /*
  * Add Breakpoints to the list
- * Call breakpoints as:
- * @include bp-min(desktop-small); -> min width
- * @include bp-min-max(desktop-small $desktop-large); -> min width and max-width
+ * Include breakpoints as:
+ * @include bp-min(desktop-small); // min width
+ * @include bp-min-max(desktop-small $desktop-large); // min width and max-width
  */
 
 $breakpoints: (
