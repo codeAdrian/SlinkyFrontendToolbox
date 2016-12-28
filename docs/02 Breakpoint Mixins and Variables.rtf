@@ -1,5 +1,6 @@
 Breakpoints are defined in a map file located in \scss\helpers\_breakpoints-config.scss
 
+Example:
 $breakpoints: (
         mobile-portrait:    320px,
         mobile-landscape:   480px,
@@ -20,6 +21,10 @@ min-width breakpoints can be included as:
 
 min-max width range breakpoint can be included as:
 @include bp-min-max(breakpoint-name-min breakpoint-name-max);
+
+Note: Max width value is automatically decremented by 1 so you can chain ranges (based on the example) like so:
+Breakpoint range 1: from 320px to 479px (passed mobile-portrait and mobile-landscape)
+Breakpoint range 2: from 480px to 787px (passed mobile-landscape and tablet-portrait)
 
 
 $use-ems: true|false;

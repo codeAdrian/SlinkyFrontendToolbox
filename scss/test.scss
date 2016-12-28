@@ -108,7 +108,6 @@ h1 {
     @include ms-respond(font-size, 5);
     padding: ms(4) 0  ms(2) 0;
     @include ms-respond(line-height, 5);
-
 }
 h2 {
     @include ms-respond(font-size, 4);
