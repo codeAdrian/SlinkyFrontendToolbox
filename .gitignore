@@ -88,26 +88,6 @@ build.properties
 includes/config.php
 .phpstorm.meta.php
 
-# Sass cache
-/skin/frontend/enterprise/zeeandco/.sass-cache/
-/skin/frontend/enterprise/zeeandco/sass/.sass-cache/
-/skin/frontend/enterprise/zeeandco_default/.sass-cache/
-/skin/frontend/enterprise/zeeandco_default/sass/.sass-cache/
-/skin/frontend/enterprise/zeeandco_men/.sass-cache/
-/skin/frontend/enterprise/zeeandco_men/sass/.sass-cache/
-/skin/frontend/enterprise/zeeandco_women/.sass-cache/
-/skin/frontend/enterprise/zeeandco_women/sass/.sass-cache/
-/skin/frontend/enterprise/zeeandco_junior/.sass-cache/
-/skin/frontend/enterprise/zeeandco_junior/sass/.sass-cache/
-
-# Sass map files
-/skin/frontend/enterprise/zeeandco/css/default.css.map
-/skin/frontend/enterprise/zeeandco_default/css/default.css.map
-/skin/frontend/enterprise/zeeandco_men/css/default.css.map
-/skin/frontend/enterprise/zeeandco_women/css/default.css.map
-/skin/frontend/enterprise/zeeandco/css/styles.css.map
-/skin/frontend/enterprise/zeeandco_junior/css/default.css.map
-
 # Gulp
 /gulpfile.js
 /package.json
