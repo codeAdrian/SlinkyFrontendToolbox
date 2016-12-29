@@ -1,0 +1,17 @@
+/*------------------------------------------------------------*\
+                    UNIT CONVERT FUNCTIONS
+\*------------------------------------------------------------*/
+
+/*
+ * Convert px value to rem value based on the default font size
+ */
+@function px-to-rem($px-value, $base: $base-font-size){
+    @return $px-value/$base*1rem;
+}
+
+/*
+ * Convert px value to em value based on the root font size
+ */
+@function px-to-em($px-value, $base: 16px) {
+    @return $px-value/$base*1rem;
+}

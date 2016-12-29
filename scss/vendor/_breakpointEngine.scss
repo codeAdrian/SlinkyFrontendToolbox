@@ -18,13 +18,14 @@
         }
     }
 }
+
 /*------------------------------------------------------------*\
                        MIN-WIDTH BREAKPOINT
 \*------------------------------------------------------------*/
-@mixin bp-min($bp){
+@mixin breakpoint-min($bp){
     @if($use-ems) {
         $bp: map-get($breakpoints, $bp) / 16px * 1em;
-        @include susy-breakpoint(){  @content;  }
+        @include susy-breakpoint($bp){  @content;  }
     }
     @else {
         @include susy-breakpoint(map-get($breakpoints, $bp)){  @content;  }
@@ -34,7 +35,7 @@
 /*------------------------------------------------------------*\
                  MIN-WIDTH AND MAX-WIDTH BREAKPOINT
 \*------------------------------------------------------------*/
-@mixin bp-min-max($bp-min, $bp-max){
+@mixin breakpoint-min-max($bp-min, $bp-max){
     @if($use-ems) {
         $bp-min: map-get($breakpoints, $bp-min) / 16px * 1em;
         $bp-max: (map-get($breakpoints, $bp-max)-1) / 16px *1em;

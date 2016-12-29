@@ -1,34 +1,34 @@
 /*------------------------------------------------------------*\
-                       COMMON STYLES
+                       GENERAL PAGE SETUP
 \*------------------------------------------------------------*/
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
 
 /**
  *
- * 1. Set the default `font-size` for the entire project,
- *    sourced from our default variables.
+ * 1. Set the default typography rules sourced from our default variables.
  * 2. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
  *    navigating between pages that do/do not have enough content to produce
  *    scrollbars naturally.
  * 3. Optimize font rendering
  */
 
+body {
+    font-family: $main-font-family; /* [1] */
+    font-size: $base-font-size; /* [1] */
+    line-height: $base-line-height; /* [1] */
+}
+
 html {
     box-sizing: border-box;
-    font-family: $main-font-family;
-    font-size: $base-font-size; /* [1] */
     overflow-y: scroll; /* [2] */
-
-
     -webkit-font-smoothing: antialiased;  /* [3] */
     -moz-osx-font-smoothing: grayscale;  /* [3] */
     -ms-text-size-adjust: none;  /* [3] */
     -webkit-text-size-adjust: none;  /* [3] */
-}
-
-html,
-body {
-    width: 100%;
-    height: 100%;
 }
 
 /**
