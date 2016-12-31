@@ -1,19 +1,27 @@
 /*------------------------------------------------------------*\
             GENERATE CSS-TO-JS PSEUDO-CLASS HINTS
 \*------------------------------------------------------------*/
-@if($use-css-to-js) {
+@if ($use-css-to-js) {
     body:before {
-        content: "mobile";
+        @if ($css-to-js-version == 3) {
+            content: "0";
+        } @else {
+            content: "mobile";
+        }
         display: none; /* Prevent from displaying. */
     }
 
     @each $key, $value in $breakpoints {
-        @if($use-ems) {
+        @if ($use-ems) {
             $value: $value/16px*1em;
         }
         @include susy-breakpoint($value) {
             body:before {
-                content: "#{$key}"
+                @if ($css-to-js-version == 3) {
+                    content: "#{$value}"
+                } @else {
+                    content: "#{$key}"
+                }
             }
         }
     }
@@ -22,26 +30,32 @@
 /*------------------------------------------------------------*\
                        MIN-WIDTH BREAKPOINT
 \*------------------------------------------------------------*/
-@mixin breakpoint-min($bp){
-    @if($use-ems) {
+@mixin breakpoint-min($bp) {
+    @if ($use-ems) {
         $bp: map-get($breakpoints, $bp) / 16px * 1em;
-        @include susy-breakpoint($bp){  @content;  }
-    }
-    @else {
-        @include susy-breakpoint(map-get($breakpoints, $bp)){  @content;  }
+        @include susy-breakpoint($bp) {
+            @content;
+        }
+    } @else {
+        @include susy-breakpoint(map-get($breakpoints, $bp)) {
+            @content;
+        }
     }
 }
 
 /*------------------------------------------------------------*\
                  MIN-WIDTH AND MAX-WIDTH BREAKPOINT
 \*------------------------------------------------------------*/
-@mixin breakpoint-min-max($bp-min, $bp-max){
-    @if($use-ems) {
+@mixin breakpoint-min-max($bp-min, $bp-max) {
+    @if ($use-ems) {
         $bp-min: map-get($breakpoints, $bp-min) / 16px * 1em;
         $bp-max: (map-get($breakpoints, $bp-max)-1) / 16px *1em;
-        @include susy-breakpoint($bp-min $bp-max){  @content;  }
-    }
-    @else {
-        @include susy-breakpoint(map-get($breakpoints, $bp-min) map-get($breakpoints, $bp-max)-1){  @content;  }
+        @include susy-breakpoint($bp-min $bp-max) {
+            @content;
+        }
+    } @else {
+        @include susy-breakpoint(map-get($breakpoints, $bp-min) map-get($breakpoints, $bp-max)-1) {
+            @content;
+        }
     }
 }
