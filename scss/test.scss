@@ -117,17 +117,17 @@ h2 {
 h3 {
     @include ms-respond(font-size, 3);
     padding: ms(2) 0 ms(1) 0;
-    @include ms-respond(line-height, 4);
+    @include ms-respond(line-height, 3);
 }
 h4 {
     @include ms-respond(font-size, 2);
     padding: ms(1) 0 ms(0) 0;
-    @include ms-respond(line-height, 3);
+    @include ms-respond(line-height, 2);
 }
 h5 {
     @include ms-respond(font-size, 1);
     padding: ms(-1) 0 ms(-2) 0;
-    @include ms-respond(line-height, 2);
+    @include ms-respond(line-height, 1);
 }
 h6 {
     @include ms-respond(font-size, 0);
@@ -139,7 +139,7 @@ p {
     padding: 0 0 ms(-2) 0;
 }
 
-@include breakpoint-min(desktop-large){
+@include breakpoint-min(desktop-small){
     body {
         background: pink;
     }
@@ -148,5 +148,18 @@ p {
 @include breakpoint-min-max(mobile-landscape, tablet-landscape){
     body {
         background: yellow;
+    }
+}
+
+$susy-test: (
+        columns: 18,
+        gutters: .25,
+        math: fluid,
+);
+
+@include breakpoint-grid(desktop-large, $susy-test){
+    body{
+        @include container();
+        background: lightgreen !important;
     }
 }
