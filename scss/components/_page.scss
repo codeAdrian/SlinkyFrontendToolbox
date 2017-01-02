@@ -16,19 +16,19 @@ body {
  * 3. Optimize font rendering
  */
 
-body {
-    font-family: $main-font-family; /* [1] */
-    font-size: $base-font-size; /* [1] */
-    line-height: $base-line-height; /* [1] */
-}
-
 html {
     box-sizing: border-box;
+    font-family: $main-font-family; /* [1] */
+    font-size: $base-font-size; /* [1] */
     overflow-y: scroll; /* [2] */
     -webkit-font-smoothing: antialiased;  /* [3] */
     -moz-osx-font-smoothing: grayscale;  /* [3] */
     -ms-text-size-adjust: none;  /* [3] */
     -webkit-text-size-adjust: none;  /* [3] */
+}
+
+body {
+    line-height: $base-line-height; /* [1] */
 }
 
 /**
