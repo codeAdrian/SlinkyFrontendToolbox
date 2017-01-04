@@ -1,0 +1,28 @@
+/*------------------------------------------------------------*\
+                   NON-RHYTHM TYPOGRAPHY
+\*------------------------------------------------------------*/
+/*
+ * Rhythm based on static px values, not dependant on scale or
+ * rhythm. static-rhythm accepts font-size, line-height,
+ * padding-x and margin-x as attributes while other 2 mixins
+ * return pairs of vertical paddings and margins respectively
+ *
+*/
+
+@mixin static-rhythm($css-attribute, $px-value){
+    @if($use-px-fallback-for-rem){
+        #{$css-attribute}: $px-value;
+    }
+    $rem-value: $px-value / $base-font-size * 1rem;
+    #{$css-attribute}: $rem-value;
+}
+
+@mixin static-paddings($padding-top, $padding-bottom) {
+    @include static-rhythm(padding-top, $padding-top);
+    @include static-rhythm(padding-bottom, $padding-bottom);
+}
+
+@mixin static-margins($margin-top, $margin-bottom) {
+    @include static-rhythm(margin-top, $margin-top);
+    @include static-rhythm(margin-bottom, $margin-bottom);
+}

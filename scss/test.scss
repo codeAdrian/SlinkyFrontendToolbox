@@ -104,39 +104,41 @@
     }
 }
 
-h1 {
-    @include ms-respond(font-size, 5);
-    padding: ms(4) 0  ms(3) 0;
-    @include ms-respond(line-height, 5);
-}
-h2 {
-    @include ms-respond(font-size, 4);
-    padding: ms(3) 0 ms(2) 0;
-    @include ms-respond(line-height, 4);
-}
-h3 {
-    @include ms-respond(font-size, 3);
-    padding: ms(2) 0 ms(1) 0;
-    @include ms-respond(line-height, 3);
-}
-h4 {
-    @include ms-respond(font-size, 2);
-    padding: ms(1) 0 ms(0) 0;
-    @include ms-respond(line-height, 2);
-}
-h5 {
-    @include ms-respond(font-size, 1);
-    padding: ms(-1) 0 ms(-2) 0;
-    @include ms-respond(line-height, 1);
-}
-h6 {
-    @include ms-respond(font-size, 0);
-    padding: ms(-1) 0 ms(-2) 0;
-    @include ms-respond(line-height, 0);
-}
+.vertical-rhythm {
+    h1 {
+        @include ms-respond(font-size, 5);
+        padding: ms(4) 0  ms(3) 0;
+        @include ms-respond(line-height, 5);
+    }
+    h2 {
+        @include ms-respond(font-size, 4);
+        padding: ms(3) 0 ms(2) 0;
+        @include ms-respond(line-height, 4);
+    }
+    h3 {
+        @include ms-respond(font-size, 3);
+        padding: ms(2) 0 ms(1) 0;
+        @include ms-respond(line-height, 3);
+    }
+    h4 {
+        @include ms-respond(font-size, 2);
+        padding: ms(1) 0 ms(0) 0;
+        @include ms-respond(line-height, 2);
+    }
+    h5 {
+        @include ms-respond(font-size, 1);
+        padding: ms(-1) 0 ms(-2) 0;
+        @include ms-respond(line-height, 1);
+    }
+    h6 {
+        @include ms-respond(font-size, 0);
+        padding: ms(-1) 0 ms(-2) 0;
+        @include ms-respond(line-height, 0);
+    }
 
-p {
-    padding: 0 0 ms(-2) 0;
+    p {
+        padding: 0 0 ms(-2) 0;
+    }
 }
 
 @include breakpoint-min(desktop-small){
@@ -161,5 +163,56 @@ $susy-test: (
     body{
         @include container();
         background: lightgreen !important;
+    }
+}
+
+
+@import "../optional includes/scss/Static Rhythm Mixins/helpers/static-rhythm-config";
+@import "../optional includes/scss/Static Rhythm Mixins/vendor/static-rhythm";
+
+html.static-rhythm {
+    font-size: 62.5%;
+    body {
+        @include static-rhythm(font-size,20px);
+    }
+
+    h1{
+        @include static-rhythm(font-size, 48px);
+        @include static-rhythm(line-height, 56px);
+        @include static-paddings(32px, 24px);
+    }
+
+    h2 {
+        @include static-rhythm(font-size, 42px);
+        @include static-rhythm(line-height, 50px);
+        @include static-paddings(36px, 20px);
+    }
+
+    h3 {
+        @include static-rhythm(font-size, 36px);
+        @include static-rhythm(line-height, 42px);
+        @include static-paddings(32px, 18px);
+    }
+
+    h4 {
+        @include static-rhythm(font-size, 32px);
+        @include static-rhythm(line-height, 36px);
+        @include static-paddings(28px, 16px);
+    }
+
+    h5 {
+        @include static-rhythm(font-size, 28px);
+        @include static-rhythm(line-height, 32px);
+        @include static-paddings(24px, 14px);
+    }
+
+    h6 {
+        @include static-rhythm(font-size, 24px);
+        @include static-rhythm(line-height, 28px);
+        @include static-paddings(20px, 12px);
+    }
+
+    p{
+        @include static-rhythm(padding-bottom, 12px);
     }
 }

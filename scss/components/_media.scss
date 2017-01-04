@@ -4,12 +4,14 @@
  * 3. Setting `vertical-align` removes the whitespace that appears under `img`
  *    elements when they are dropped into a page as-is. Safer alternative to
  *    using `display: block;`.
+ * 4. Improve IE's resizing of images: css-tricks.com/ie-fix-bicubic-scaling-for-images
  */
 
 img {
     max-width: 100%; /* [1] */
     font-style: italic; /* [2] */
     vertical-align: middle; /* [3] */
+    -ms-interpolation-mode: bicubic; /* [4] */
 }
 
 /*
@@ -23,4 +25,13 @@ iframe,
 svg,
 video {
     vertical-align: middle;
+}
+
+/*
+ * Automatically scales images larger than the container.
+ * Consider this first: http://unstoppablerobotninja.com/entry/fluid-images/
+ */
+
+object, video {
+    max-width: 100%;
 }
