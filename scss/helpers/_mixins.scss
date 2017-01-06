@@ -16,10 +16,21 @@
 }
 
 /*------------------------------------------------------------*\
-                     VENDOR PREFIXES MIXINS
+                     VENDOR PREFIX MIXIN
 \*------------------------------------------------------------*/
 
 /*
  * Use http://caniuse.com/ and http://shouldiprefix.com/ to determine which
  * prefixes should be used in the mixins to avoid code bloat.
+ * @author Hugo Giraudel
+ * Sample use: @include prefix(property, value, prefix1 prefix2 prefix3);
+ * Sample use: @include prefix(transform, rotate(45deg), webkit ms);
+ * Use this mixin to build your own vendor prefixes mixin
  */
+
+@mixin prefix($property, $value, $prefixes: ()) {
+    @each $prefix in $prefixes {
+        #{'-' + $prefix + '-' + $property}: $value;
+    }
+    #{$property}: $value;
+}
