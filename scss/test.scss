@@ -71,24 +71,6 @@
     }
 }
 
-.col3-set {
-    @include container();
-
-    div {
-        box-sizing: border-box;
-        border: 1px solid black;
-    }
-
-    .col-1,
-    .col-2 {
-        @include span(4 of 12);
-    }
-
-    .col-3 {
-        @include span(last 4 of 12);
-    }
-}
-
 .col2-left {
     * {
         box-sizing: border-box;
@@ -154,15 +136,57 @@
 }
 
 $susy-test: (
-        columns: 18,
+        columns: 12,
         gutters: .25,
         math: fluid,
 );
 
-@include breakpoint-grid(desktop-large, $susy-test){
-    body{
+$susy-test2: (
+        columns: 6,
+        gutters: .75,
+        math: fluid,
+);
+
+@include breakpoint-grid(mobile-portrait, $susy-test2){
+   .col3-set{
         @include container();
         background: lightgreen !important;
+    }
+
+
+    div {
+        box-sizing: border-box;
+        border: 1px solid black;
+    }
+
+    .col-1,
+    .col-2 {
+        @include span(2);
+    }
+
+    .col-3 {
+        @include span(last 2);
+    }
+}
+
+@include breakpoint-grid(tablet-portrait, $susy-test){
+    .col3-set{
+        @include container();
+        background: lightgreen !important;
+    }
+
+    div {
+        box-sizing: border-box;
+        border: 1px solid black;
+    }
+
+    .col-1,
+    .col-2 {
+        @include span(4);
+    }
+
+    .col-3 {
+        @include span(last 4);
     }
 }
 
