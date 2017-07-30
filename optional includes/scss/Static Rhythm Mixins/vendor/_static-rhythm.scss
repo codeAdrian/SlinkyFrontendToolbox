@@ -17,12 +17,36 @@
     #{$css-attribute}: $rem-value;
 }
 
-@mixin static-paddings($padding-top, $padding-bottom) {
+@mixin font-size($font-size) {
+    @include static-rhythm(font-size, $font-size);
+}
+
+@mixin line-height($line-height) {
+    @include static-rhythm(line-height, $line-height);
+}
+
+@mixin static-paddings($padding-top, $padding-bottom: $padding-top) {
     @include static-rhythm(padding-top, $padding-top);
     @include static-rhythm(padding-bottom, $padding-bottom);
+}
+
+@mixin padding-bottom($padding-bottom) {
+    @include static-rhythm(padding-bottom, $padding-bottom);
+}
+
+@mixin padding-top($padding-top) {
+    @include static-rhythm(padding-top, $padding-top);
 }
 
 @mixin static-margins($margin-top, $margin-bottom) {
     @include static-rhythm(margin-top, $margin-top);
     @include static-rhythm(margin-bottom, $margin-bottom);
+}
+
+@mixin margin-bottom($margin-bottom) {
+    @include static-rhythm(margin-bottom, $margin-bottom);
+}
+
+@mixin margin-top($margin-top) {
+    @include static-rhythm(margin-top, $margin-top);
 }

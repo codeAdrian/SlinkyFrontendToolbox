@@ -30,14 +30,17 @@
 /*------------------------------------------------------------*\
                        MIN-WIDTH BREAKPOINT
 \*------------------------------------------------------------*/
-@mixin breakpoint-min($bp) {
+@mixin breakpoint-min($bp, $media: screen) {
     @if ($use-ems) {
         $bp: map-get($breakpoints, $bp) / 16px * 1em;
-        @include susy-media($bp) {
+        $t:( media: $media, min-width: $bp);
+
+        @include susy-media($t) {
             @content;
         }
     } @else {
-        @include susy-media(map-get($breakpoints, $bp)) {
+        $t:( media: $media, min-width: map-get($breakpoints, $bp));
+        @include susy-media(map-get($t)) {
             @content;
         }
     }
@@ -46,15 +49,21 @@
 /*------------------------------------------------------------*\
                  MIN-WIDTH AND MAX-WIDTH BREAKPOINT
 \*------------------------------------------------------------*/
-@mixin breakpoint-min-max($bp-min, $bp-max) {
+@mixin breakpoint-min-max($bp-min, $bp-max, $media: screen) {
     @if ($use-ems) {
+
         $bp-min: map-get($breakpoints, $bp-min) / 16px * 1em;
         $bp-max: (map-get($breakpoints, $bp-max)-1) / 16px *1em;
-        @include susy-media($bp-min $bp-max) {
+        $t:(media: $media, min-width: $bp-min, max-width: $bp-max);
+
+        @include susy-media($t) {
             @content;
         }
+
     } @else {
-        @include susy-media(map-get($breakpoints, $bp-min) map-get($breakpoints, $bp-max)-1) {
+        $t:(media: $media, min-width: map-get($breakpoints, $bp-min), max-width: map-get($breakpoints, $bp-max)-1);
+
+        @include susy-media($t) {
             @content;
         }
     }
