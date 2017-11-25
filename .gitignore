@@ -89,7 +89,6 @@ includes/config.php
 
 # Gulp
 /gulpfile.js
-/package.json
 /node_modules
 
 # Logs
