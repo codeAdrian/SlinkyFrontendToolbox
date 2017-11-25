@@ -17,10 +17,8 @@
                       HELPERS INCLUDES
 \*------------------------------------------------------------*/
 
-@import "helpers/reset-config";
 @import "helpers/typography-config";
 @import "helpers/breakpoints-config";
-@import "helpers/susy-config";
 @import "helpers/functions";
 @import "helpers/mixins";
 
@@ -28,16 +26,13 @@
                       VENDOR INCLUDES
 \*------------------------------------------------------------*/
 
-@import "vendor/susy";
-@import "vendor/modular-scale";
-@import "vendor/breakpointEngine";
 @import "vendor/flexbox";
 
 /*------------------------------------------------------------*\
                      RESET / NORMALIZE
 \*------------------------------------------------------------*/
 
-@import "base/reset";
+@import "base/reboot";
 
 /*------------------------------------------------------------*\
                        THEME FILES
