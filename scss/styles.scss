@@ -14,30 +14,24 @@
  */
 
 /*------------------------------------------------------------*\
-                      HELPERS INCLUDES
+                     RESET / NORMALIZE
 \*------------------------------------------------------------*/
 
-@import "helpers/reset-config";
-@import "helpers/typography-config";
-@import "helpers/breakpoints-config";
-@import "helpers/susy-config";
-@import "helpers/functions";
-@import "helpers/mixins";
+@import "base/normalize";
 
 /*------------------------------------------------------------*\
                       VENDOR INCLUDES
 \*------------------------------------------------------------*/
-
-@import "vendor/susy";
-@import "vendor/modular-scale";
-@import "vendor/breakpointEngine";
-@import "vendor/flexbox";
+@import '../node_modules/libsass-compass-vertical-rhythm/lib/compass_rhythm';
 
 /*------------------------------------------------------------*\
-                     RESET / NORMALIZE
+                      HELPERS INCLUDES
 \*------------------------------------------------------------*/
 
-@import "base/reset";
+@import "helpers/typography-config";
+@import "helpers/breakpoints-config";
+@import "helpers/functions";
+@import "helpers/mixins";
 
 /*------------------------------------------------------------*\
                        THEME FILES
