@@ -32,7 +32,7 @@ gulp.task('sass', function () {
             errLogToConsole: true,
             outputStyle: 'compressed'
         })).pipe(autoprefixer({
-            browsers: ['last 2 versions'],
+            browsers: ['last 3 versions'],
             cascade: false
         }))
         .pipe(stripCssComments())
@@ -42,7 +42,7 @@ gulp.task('sass', function () {
 // Sass file watcher
 gulp.task('sass-watch', function() {
     return gulp
-        .watch([cssInput, cssOutput])
+        .watch([cssInput, cssOutput],['sass'])
         // When there is a change, log a message in the console
         .on('change', function(event) {
             console.log('Css File ' + event.path + ' was ' + event.type + ', running tasks...');
