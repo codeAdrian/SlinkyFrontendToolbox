@@ -1,6 +1,11 @@
 {
   "name": "Echo-Toolkit",
   "version": "3.1.0",
+  "license": "(MIT OR Apache-2.0)",
+  "repository" : { 
+    "type" : "git", 
+    "url" : "https://github.com/codeAdrian/Echo-Toolkit"
+  },
   "author": {
     "name" : "Adrian Bece", 
     "email" : "adrianbece@live.com", 
