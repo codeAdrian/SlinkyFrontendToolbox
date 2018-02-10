@@ -2,15 +2,31 @@
   "name": "Echo-Toolkit",
   "version": "3.0.0",
   "devDependencies": {
+    "gulp-cli":"^2.0.1",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.0.0",
+    "gulp-autoprefixer": "^4.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.6.1",
-    "gulp-strip-css-comments": "^1.2.0",
-    "gulp-uglify": "^3.0.0"
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-strip-css-comments": "^2.0.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-imagemin": "^4.1.0"
   },
   "dependencies": {
     "libsass-compass-vertical-rhythm": "^1.0.0"
+  },
+  "browserslist": [
+    "last 4 versions",
+    "not ie <= 8"
+  ],
+  "scripts": {
+    "echo:dev": "gulp --gulpfile gulp/gulpfile.js",
+    "echo:watch": "gulp --gulpfile gulp/gulpfile.js",
+    "echo:compile:sass": "gulp compile-sass --gulpfile gulp/gulpfile.js",
+    "echo:minify:javascript":"gulp minify-javascript --gulpfile gulp/gulpfile.js",
+    "echo:minify:images":"gulp minify-images --gulpfile gulp/gulpfile.js",
+    "echo:watch:sass": "gulp watch-compile-sass --gulpfile gulp/gulpfile.js",
+    "echo:watch:javascript":"gulp watch-minify-javascript --gulpfile gulp/gulpfile.js",
+    "echo:watch:images":"gulp watch-minify-images --gulpfile gulp/gulpfile.js"
   }
 }
