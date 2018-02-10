@@ -1,6 +1,11 @@
 {
   "name": "Echo-Toolkit",
-  "version": "3.0.0",
+  "version": "3.1.0",
+  "author": {
+    "name" : "Adrian Bece", 
+    "email" : "adrianbece@live.com", 
+    "url" : "http://codeadrian.github.io"
+  },
   "devDependencies": {
     "gulp-cli":"^2.0.1",
     "gulp": "^3.9.1",
@@ -20,13 +25,13 @@
     "not ie <= 8"
   ],
   "scripts": {
-    "echo:dev": "gulp --gulpfile gulp/gulpfile.js",
-    "echo:watch": "gulp --gulpfile gulp/gulpfile.js",
-    "echo:compile:sass": "gulp compile-sass --gulpfile gulp/gulpfile.js",
-    "echo:minify:javascript":"gulp minify-javascript --gulpfile gulp/gulpfile.js",
-    "echo:minify:images":"gulp minify-images --gulpfile gulp/gulpfile.js",
-    "echo:watch:sass": "gulp watch-compile-sass --gulpfile gulp/gulpfile.js",
-    "echo:watch:javascript":"gulp watch-minify-javascript --gulpfile gulp/gulpfile.js",
-    "echo:watch:images":"gulp watch-minify-images --gulpfile gulp/gulpfile.js"
+    "echo:dev": "gulp --gulpfile src/gulp/gulpfile.js",
+    "echo:watch": "gulp --gulpfile src/gulp/gulpfile.js",
+    "echo:compile:sass": "gulp compile-sass --gulpfile src/gulp/gulpfile.js",
+    "echo:minify:javascript":"gulp minify-javascript --gulpfile src/gulp/gulpfile.js",
+    "echo:minify:images":"gulp minify-images --gulpfile src/gulp/gulpfile.js",
+    "echo:watch:sass": "gulp watch-compile-sass --gulpfile src/gulp/gulpfile.js",
+    "echo:watch:javascript":"gulp watch-minify-javascript --gulpfile src/gulp/gulpfile.js",
+    "echo:watch:images":"gulp watch-minify-images --gulpfile src/gulp/gulpfile.js"
   }
 }

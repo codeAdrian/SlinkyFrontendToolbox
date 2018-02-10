@@ -1,3 +1,18 @@
+/*
+ *  ______     _             _______          _ _    _ _
+ * |  ____|   | |           |__   __|        | | |  (_) |
+ * | |__   ___| |__   ___      | | ___   ___ | | | ___| |_
+ * |  __| / __| '_ \ / _ \     | |/ _ \ / _ \| | |/ / | __|
+ * | |___| (__| | | | (_) |    | | (_) | (_) | |   <| | |_
+ * |______\___|_| |_|\___/     |_|\___/ \___/|_|_|\_\_|\__|  v 3.1.0
+ *
+ *                                  Echo Team Frontend Toolkit
+ *                                  By: Adrian Bece
+ *
+ *                                      adrian.bece@inchoo.net
+ *                                      @AdrianBDesigns
+ */
+
 /**
  * Gulp task runner requires
  */
@@ -17,15 +32,15 @@ const imagemin = require('gulp-imagemin');
 
  // CSS
 var cssInput = '../scss/**/*.scss';
-var cssOutput = '../css';
+var cssOutput = '../../css/';
 
 // Javascript
-var jsSkinInput = '../js/_dev-files/**/*.js';
-var jsSkinOutput = '../js/';
+var jsSkinInput = '../js/**/*.js';
+var jsSkinOutput = '../../js/';
 
 // Images
-var imageInput = '../images/_dev-files/*';
-var imageOutput = '../images';
+var imageInput = '../images/**/*.{jpg,jpeg,gif,png,svg}';
+var imageOutput = '../../images/';
 
 /**
  * Minify Images
