@@ -24,13 +24,13 @@ var config = require('./gulp.config')();
 /**
  * Minify Images
  */
-gulp.task('minify-images', () =>
-    gulp
+gulp.task('minify-images', function() {
+    return gulp
         .src(config.imageInput)
         .pipe($.imagemin().on('error', handleError))
         .pipe($.rename(config.imgRename))
-        .pipe(gulp.dest(config.imageOutput))
-);
+        .pipe(gulp.dest(config.imageOutput));
+});
 
 /**
  * Minify Javascript
