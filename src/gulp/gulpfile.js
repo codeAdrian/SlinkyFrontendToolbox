@@ -1,164 +1,169 @@
 /*
- *  ______     _             _______          _ _    _ _
- * |  ____|   | |           |__   __|        | | |  (_) |
- * | |__   ___| |__   ___      | | ___   ___ | | | ___| |_
- * |  __| / __| '_ \ / _ \     | |/ _ \ / _ \| | |/ / | __|
- * | |___| (__| | | | (_) |    | | (_) | (_) | |   <| | |_
- * |______\___|_| |_|\___/     |_|\___/ \___/|_|_|\_\_|\__|  v 3.1.0
  *
- *                                  Echo Team Frontend Toolkit
- *                                  By: Adrian Bece
+ * ███████╗██╗     ██╗███╗   ██╗██╗  ██╗██╗   ██╗
+ * ██╔════╝██║     ██║████╗  ██║██║ ██╔╝╚██╗ ██╔╝
+ * ███████╗██║     ██║██╔██╗ ██║█████╔╝  ╚████╔╝ 
+ * ╚════██║██║     ██║██║╚██╗██║██╔═██╗   ╚██╔╝  
+ * ███████║███████╗██║██║ ╚████║██║  ██╗   ██║   
+ * ╚══════╝╚══════╝╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝   ╚═╝  
  *
- *                                      adrian.bece@inchoo.net
- *                                      @AdrianBDesigns
+ * Frontend Toolbox       Created By: Adrian Bece
+ * 
+ *                        adrian.bece@inchoo.net
+ *                        @AdrianBDesigns
  */
 
 /**
  * Gulp task runner requires
  */
 
-var gulp = require("gulp");
-var sass = require("gulp-sass");
-var sourcemaps = require("gulp-sourcemaps");
-var rename = require("gulp-rename");
-var uglify = require("gulp-uglify");
-var stripCssComments = require("gulp-strip-css-comments");
-const autoprefixer = require("gulp-autoprefixer");
-const imagemin = require("gulp-imagemin");
+var gulp = require('gulp');
+var map = require('map-stream');
+var args = require('yargs').argv;
+var config = require('./gulp.config')();
 
-/**
- * Input and Output folder setup
- */
-
-// CSS
-var cssInput = "../scss/**/*.scss";
-var cssOutput = "../../css/";
-
-// Javascript
-var jsSkinInput = "../js/**/*.js";
-var jsSkinOutput = "../../js/";
-
-// Images
-var imageInput = "../images/**/*.{jpg,jpeg,gif,png,svg}";
-var imageOutput = "../../images/";
+var $ = require('gulp-load-plugins')({ lazy: true });
 
 /**
  * Minify Images
  */
-gulp.task("minify-images", () =>
-  gulp
-    .src(imageInput)
-    .pipe(imagemin())
-    .pipe(
-      rename({
-        suffix: "-min"
-      })
-    )
-    .pipe(gulp.dest(imageOutput))
+gulp.task('minify-images', () =>
+    gulp
+        .src(config.imageInput)
+        .pipe($.imagemin())
+        .pipe($.rename(config.imgRename))
+        .pipe(gulp.dest(config.imageOutput))
 );
 
 /**
  * Minify Javascript
  */
-gulp.task("minify-javascript", function() {
-  return gulp
-    .src(jsSkinInput)
-    .pipe(uglify())
-    .pipe(
-      rename({
-        suffix: ".min"
-      })
-    )
-    .pipe(gulp.dest(jsSkinOutput));
+gulp.task('minify-javascript', function() {
+    return gulp
+        .src(config.jsSkinInput)
+        .pipe($.if(args.verbose, $.print.default()))
+        .pipe($.jscs())
+        .pipe($.jshint())
+        .pipe(
+            $.jshint
+                .reporter('jshint-stylish', { verbose: true })
+                .on('error', handleError)
+        )
+        .pipe($.jshint.reporter('fail').on('error', handleError))
+        .pipe($.rename(config.jsRename))
+        .pipe($.uglify().on('error', handleError))
+        .pipe(gulp.dest(config.jsSkinOutput));
 });
 
 /**
  * Compile, Autoprefix and Minify SASS/SCSS
  */
-gulp.task("compile-sass", function() {
-  return gulp
-    .src(cssInput)
-    .pipe(sourcemaps.init())
-    .pipe(
-      sass({
-        errLogToConsole: true,
-        outputStyle: "compressed"
-      })
-    )
-    .pipe(
-      autoprefixer({
-        cascade: false
-      })
-    )
-    .pipe(stripCssComments())
-    .pipe(gulp.dest(cssOutput));
+gulp.task('compile-sass', function() {
+    return gulp
+        .src(config.cssInput)
+        .pipe($.sassLint(config.scssLintConfig))
+        .pipe($.sassLint.format())
+        .pipe($.sassLint.failOnError().on('error', handleError))
+        .pipe($.sourcemaps.init())
+        .pipe($.sass(config.sass).on('error', handleError))
+        .pipe($.autoprefixer(config.autoprefixer))
+        .pipe($.stripCssComments())
+        .pipe(gulp.dest(config.cssOutput));
 });
 
 /**
  * Watcher for SASS/CSS compile task
  */
-gulp.task("watch-compile-sass", function() {
-  return (gulp
-      .watch([cssInput, cssOutput], ["compile-sass"])
-      // When there is a change, log a message in the console
-      .on("change", function(event) {
-        console.log(
-          "SASS/SCSS file " +
-            event.path +
-            " was " +
-            event.type +
-            ". Compiling SASS/SCSS..."
-        );
-      }) );
+gulp.task('watch-compile-sass', function() {
+    return (gulp
+            .watch([config.cssInput, config.cssOutput], ['compile-sass'])
+            // When there is a change, log a message in the console
+            .on('change', function(event) {
+                log(
+                    'SASS/SCSS file ' +
+                        event.path +
+                        ' was ' +
+                        event.type +
+                        '. Compiling SASS/SCSS...'
+                );
+            }) );
 });
 
 /**
  * Watcher for Image minify task
  */
-gulp.task("watch-minify-images", function() {
-  return (gulp
-      .watch([imageInput, imageOutput], ["minify-images"])
-      // When there is a change, log a message in the console
-      .on("change", function(event) {
-        console.log(
-          "Image file " +
-            event.path +
-            " was " +
-            event.type +
-            ". Minifying Images..."
-        );
-      }) );
+gulp.task('watch-minify-images', function() {
+    return (gulp
+            .watch([config.imageInput, config.imageOutput], ['minify-images'])
+            // When there is a change, log a message in the console
+            .on('change', function(event) {
+                log(
+                    'Image file ' +
+                        event.path +
+                        ' was ' +
+                        event.type +
+                        '. Minifying Images...'
+                );
+            }) );
 });
 
 /**
  * Watcher for JS minify task
  */
-gulp.task("watch-minify-javascript", function() {
-  return (gulp
-      // Watch the js input folder for change
-      .watch([jsSkinInput, jsSkinOutput], ["minify-javascript"])
-      // log a message in the console
-      .on("change", function(event) {
-        console.log(
-          "Javascript file " +
-            event.path +
-            " was " +
-            event.type +
-            ". Minifying Javascipt..."
-        );
-      }) );
+gulp.task('watch-minify-javascript', function() {
+    return (gulp
+            // Watch the js input folder for change
+            .watch(
+                [config.jsSkinInput, config.jsSkinOutput],
+                ['minify-javascript']
+            )
+            // log a message in the console
+            .on('change', function(event) {
+                log(
+                    'Javascript file ' +
+                        event.path +
+                        ' was ' +
+                        event.type +
+                        '. Minifying Javascipt...'
+                );
+            }) );
 });
+
+/**
+ * Custom Functions
+ */
+
+function log(msg) {
+    if (typeof msg === 'object') {
+        for (var item in msg) {
+            if (msg.hasOwnProperty(item)) {
+                $.util.log($.util.colors.blue(msg[item]));
+            }
+        }
+    } else {
+        $.util.log($.util.colors.blue(msg));
+    }
+}
+
+function handleError(e) {
+    log(config.consoleDivider);
+    log('Warning: Code is not valid');
+    log('File: ' + e.file);
+    log('Please check terminal for info on warnings and errors ');
+    log(config.consoleDivider);
+    this.emit('end');
+}
 
 /**
  * Default task
  * Watcher: SASS/SCSS, Javascript, Images
  */
 
-gulp.task("default", [
-  "compile-sass",
-  "minify-javascript",
-  "minify-images",
-  "watch-compile-sass",
-  "watch-minify-javascript",
-  "watch-minify-images"
+gulp.task('default', [
+    'compile-sass',
+    'minify-javascript',
+    'minify-images',
+    'watch-compile-sass',
+    'watch-minify-javascript',
+    'watch-minify-images'
 ]);

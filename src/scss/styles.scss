@@ -17,7 +17,7 @@
                      RESET / NORMALIZE
 \*------------------------------------------------------------*/
 
-@import "base/normalize";
+@import 'base/normalize';
 
 /*------------------------------------------------------------*\
                       VENDOR INCLUDES
@@ -28,19 +28,19 @@
                       HELPERS INCLUDES
 \*------------------------------------------------------------*/
 
-@import "helpers/typography-config";
-@import "helpers/breakpoints-config";
-@import "helpers/functions";
-@import "helpers/mixins";
+@import 'helpers/typography-config';
+@import 'helpers/breakpoints-config';
+@import 'helpers/functions';
+@import 'helpers/mixins';
 
 /*------------------------------------------------------------*\
                        THEME FILES
 \*------------------------------------------------------------*/
 
-@import "components/forms";
-@import "components/media";
-@import "components/page";
-@import "components/tables";
+@import 'components/forms';
+@import 'components/media';
+@import 'components/page';
+@import 'components/tables';
 
 /*------------------------------------------------------------*\
                       LAYOUT INCLUDES
