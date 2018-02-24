@@ -1,5 +1,4 @@
 /*
- *
  * ███████╗██╗     ██╗███╗   ██╗██╗  ██╗██╗   ██╗
  * ██╔════╝██║     ██║████╗  ██║██║ ██╔╝╚██╗ ██╔╝
  * ███████╗██║     ██║██╔██╗ ██║█████╔╝  ╚████╔╝ 
@@ -16,13 +15,11 @@
 /**
  * Gulp task runner requires
  */
-
 var gulp = require('gulp');
 var map = require('map-stream');
-var args = require('yargs').argv;
-var config = require('./gulp.config')();
-
 var $ = require('gulp-load-plugins')({ lazy: true });
+
+var config = require('./gulp.config')();
 
 /**
  * Minify Images
@@ -30,7 +27,7 @@ var $ = require('gulp-load-plugins')({ lazy: true });
 gulp.task('minify-images', () =>
     gulp
         .src(config.imageInput)
-        .pipe($.imagemin())
+        .pipe($.imagemin().on('error', handleError))
         .pipe($.rename(config.imgRename))
         .pipe(gulp.dest(config.imageOutput))
 );
@@ -41,7 +38,6 @@ gulp.task('minify-images', () =>
 gulp.task('minify-javascript', function() {
     return gulp
         .src(config.jsSkinInput)
-        .pipe($.if(args.verbose, $.print.default()))
         .pipe($.jscs())
         .pipe($.jshint())
         .pipe(
@@ -75,64 +71,56 @@ gulp.task('compile-sass', function() {
  * Watcher for SASS/CSS compile task
  */
 gulp.task('watch-compile-sass', function() {
-    return (gulp
-            .watch([config.cssInput, config.cssOutput], ['compile-sass'])
-            // When there is a change, log a message in the console
-            .on('change', function(event) {
-                log(
-                    'SASS/SCSS file ' +
-                        event.path +
-                        ' was ' +
-                        event.type +
-                        '. Compiling SASS/SCSS...'
-                );
-            }) );
+    return gulp
+        .watch([config.cssInput, config.cssOutput], ['compile-sass'])
+        .on('change', function(event) {
+            log(
+                'SASS/SCSS file ' +
+                    event.path +
+                    ' was ' +
+                    event.type +
+                    '. Compiling SASS/SCSS...'
+            );
+        });
 });
 
 /**
  * Watcher for Image minify task
  */
 gulp.task('watch-minify-images', function() {
-    return (gulp
-            .watch([config.imageInput, config.imageOutput], ['minify-images'])
-            // When there is a change, log a message in the console
-            .on('change', function(event) {
-                log(
-                    'Image file ' +
-                        event.path +
-                        ' was ' +
-                        event.type +
-                        '. Minifying Images...'
-                );
-            }) );
+    return gulp
+        .watch([config.imageInput, config.imageOutput], ['minify-images'])
+        .on('change', function(event) {
+            log(
+                'Image file ' +
+                    event.path +
+                    ' was ' +
+                    event.type +
+                    '. Minifying Images...'
+            );
+        });
 });
 
 /**
  * Watcher for JS minify task
  */
 gulp.task('watch-minify-javascript', function() {
-    return (gulp
-            // Watch the js input folder for change
-            .watch(
-                [config.jsSkinInput, config.jsSkinOutput],
-                ['minify-javascript']
-            )
-            // log a message in the console
-            .on('change', function(event) {
-                log(
-                    'Javascript file ' +
-                        event.path +
-                        ' was ' +
-                        event.type +
-                        '. Minifying Javascipt...'
-                );
-            }) );
+    return gulp
+        .watch([config.jsSkinInput, config.jsSkinOutput], ['minify-javascript'])
+        .on('change', function(event) {
+            log(
+                'Javascript file ' +
+                    event.path +
+                    ' was ' +
+                    event.type +
+                    '. Minifying Javascipt...'
+            );
+        });
 });
 
 /**
  * Custom Functions
  */
-
 function log(msg) {
     if (typeof msg === 'object') {
         for (var item in msg) {
@@ -158,7 +146,6 @@ function handleError(e) {
  * Default task
  * Watcher: SASS/SCSS, Javascript, Images
  */
-
 gulp.task('default', [
     'compile-sass',
     'minify-javascript',

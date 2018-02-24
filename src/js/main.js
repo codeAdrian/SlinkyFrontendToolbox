@@ -1,4 +1,4 @@
 function helloWorld() {
-    var blimp = 0;
+    var blimp = 2;
     return blimp++;
 }

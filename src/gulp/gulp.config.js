@@ -1,6 +1,11 @@
 /**
- * JSCS config
+ * JSCS config docs:
+ * -----------------
+ *
  * https://github.com/jscs-dev/node-jscs/tree/master/presets
+ * http://jshint.com/docs/options/
+ * https://github.com/sasstools/sass-lint
+ *
  */
 
 module.exports = function() {
@@ -11,6 +16,10 @@ module.exports = function() {
 
         consoleDivider:
             '-----------------------------------------------------------------',
+
+        /**
+         * SCSS Linter Config
+         */
 
         scssLintConfig: {
             options: {
