@@ -1,0 +1,94 @@
+{
+    "options": {
+        "merge-default-rules": true,
+        "formatter": "stylish",
+        "max-warnings": 50
+    },
+    "files": {
+        "include": "sass/**/*.s+(a|c)ss",
+        "ignore": ["src/scss/vendor/**/*.*"]
+    },
+    "rules": {
+        "brace-style": [
+            2,
+            {
+                "style": "1tbs",
+                "allow-single-line": false
+            }
+        ],
+        "force-element-nesting": 2,
+        "force-pseudo-nesting": 2,
+        "no-color-keywords": 1,
+        "nesting-depth": [
+            1,
+            {
+                "max-depth": 3
+            }
+        ],
+        "class-name-format": [
+            2,
+            {
+                "allow-leading-underscore": true,
+                "convention": "hyphenatedlowercase"
+            }
+        ],
+        "border-zero": [
+            2,
+            {
+                "convention": "0"
+            }
+        ],
+        "declarations-before-nesting": 2,
+        "no-extends": 2,
+        "quotes": [
+            1,
+            {
+                "style": "single"
+            }
+        ],
+        "attribute-quotes": 1,
+        "single-line-per-selector": 1,
+        "url-quotes": 2,
+        "mixins-before-declarations": [
+            2,
+            {
+                "exclude": ["breakpoint", "mq"]
+            }
+        ],
+        "no-css-comments": 0,
+        "no-duplicate-properties": 2,
+        "no-warn": 1,
+        "no-debug": 1,
+        "no-invalid-hex": 2,
+        "no-trailing-whitespace": 1,
+        "pseudo-element": 2,
+
+        "no-trailing-zero": 1,
+        "no-transition-all": 2,
+        "no-url-domains": 1,
+        "one-declaration-per-line": 1,
+        "no-misspelled-properties": 2,
+        "no-mergeable-selectors": 2,
+        "no-ids": 2,
+        "no-important": 2,
+        "hex-notation": [
+            2,
+            {
+                "style": "uppercase"
+            }
+        ],
+        "indentation": [
+            2,
+            {
+                "size": 4
+            }
+        ],
+        "property-sort-order": [
+            1,
+            {
+                "order": "smacss",
+                "ignore-custom-properties": true
+            }
+        ]
+    }
+}

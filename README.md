@@ -1,74 +1,194 @@
-# Echo Frontend Toolkit
+# Slinky Frontend Toolbox
+
+**_*Everything and the kitchen sink!*_**
 
 ## General Information
+
 **Author:** Adrian Bece <br/>
 **License:** MIT OR Apache 2.0 <br/>
-**Version:** 3.1.0 <br/>
-**Features:**
-* Gulp tasks and watchers
-* SASS/SCSS Compilation
-* Compass SASS/SCSS Vertical Rhythm Included
-* Autoprefixer Included
-* Javascript Minification
+**Version:** 3.2.2 <br/>
+
+## Features
+
+### Dev watchers (with linters)
+
+* SASS / SCSS compiler and minifier
+* JavaScript minifier
+
+### Assets watchers
+
+* Image minification
+* Font Handler
+* Favicon generation
+* Spritesheet generation
+
+### Linters:
+
+* SASS / SCSS Lint
+* JavaScript Lint
+
+### Tools:
+
+* Spritesheet Generator
+* Favicon Generator
+* Font Handler
 * Image Minification
+* Autoprefixer
+* Compass Vertical Rhythm
+
+### Configs:
+
+* Gulp
+* SASS linters
+* JSHint
+* JSCS
 
 ## Requirements
-* NodeJS version 8 and above (excluded 9)
+
+* NodeJS version 8.x (version 9.x not supported)
 
 ## Installation
-In Parent folder, run <br/>
-```npm install```
 
-## Commands
+In Parent folder, run
+
+```shell
+ npm run slinky:setup
+```
+
+## NPM Scripts
+
 Run the scripts from the parent folder
 
-Default Watcher - runs all watchers (SCSS/SASS, Javascript, Images)
-```
-npm run echo:watch
+### Dev Watcher
+
+Runs dev watchers with linters (SCSS and JavaScript)
+
+```shell
+npm run dev
 ```
 
-Task - Compiles SCSS/SASS to CSS
-```
-npm run echo:compile:sass
-```
-
-Task - Minifies Javascript
-```
-npm run echo:minify:javascript
+```shell
+npm run dev:watch
 ```
 
-Task - Minifies Images
-```
-npm run echo:minify:images
+### Assets Watcher
+
+Runs assets watchers (Fonts, Images, Spritesheet, Favicon)
+
+```shell
+npm run assets
 ```
 
-Watcher - Compiles SCSS/SASS to CSS
-```
-npm run echo:watch:sass
+```shell
+npm run assets:watch
 ```
 
-Watcher - Minifies Javascript
+### Clean Task
+
+**Removes all files** from the following folders `/js`, `/css`, `images`, `fonts`.
+
+```shell
+npm run clean
 ```
-npm run echo:watch:javascript
+
+### Test Task
+
+Runs Javascript linter and SASS linter.
+
+```shell
+npm run test
 ```
-Watcher - Minifies Images
+
+### Individual Tasks
+
+Compiles SCSS/SASS to CSS
+
+```shell
+npm run dev:compile:sass
 ```
-npm run echo:watch:images
+
+Minifies Javascript
+
+```shell
+npm run dev:minify:javascript
+```
+
+Lints Javascript
+
+```shell
+npm run dev:lint:javascript
+```
+
+Lints SASS / SCSS
+
+```shell
+npm run dev:lint:sass
+```
+
+### Individual Watchers
+
+Compiles SCSS/SASS to CSS
+
+```shell
+npm run dev:watch:sass
+```
+
+Minifies Javascript
+
+```shell
+npm run cev:watch:javascript
 ```
 
 ## Configuration
-### Autoprefixer config
-In package.json, browserslist config:
-```
-  "browserslist": [
-    "last 4 versions",
-    "not ie <= 8"
-  ],
-```
 
-Use http://browserl.ist/ for config.
+**Only edit these files when necessary. The current setup ensures best practices when writing Javascript and SASS code.**
+
+### Gulp Config
+
+Gulp config is handled by the `gulp.config.js` located in the parent folder. Following definitions can be found there:
+
+* File input and output paths
+* File suffixes
+* SASS compiler config
+* Autoprefixer config
+* Spritesheet generator config
+* Favicon generator config
+
+#### Note
+
+Autoprefixer config:
+http://browserl.ist/
+https://github.com/sindresorhus/gulp-autoprefixer
+
+Spritesheet Generator config:
+https://github.com/frontendbeast/gulp-svg-spritesheet
+
+Favicon Generator:
+https://github.com/evilebottnawi/favicons
+
+### Javascript Linter Config
+
+Javascript config is handled by the `.jscrc` and `jshintrc` files for JSRC and JSHint respectively.
+
+JSRC is a code style linter and formatter, while JSHint is a code quality tool.
+
+#### Note:
+
+JSRC config info: http://jscs.info/rules
+
+JSHint config info:
+http://jshint.com/docs/options/
+
+### SASS / SCSS Linter Config
+
+SCSS linter config is handled by the `.sasslintrc` file in parent folder.
+
+#### Note:
+
+SCSS linter config info: https://github.com/sasstools/sass-lint
 
 ## License
+
 MIT License
 Copyright (c) 2018. Adrian Bece
 

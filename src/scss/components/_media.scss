@@ -8,7 +8,7 @@ img {
     display: block;
     max-width: 100%; /* [1] */
     font-style: italic; /* [2] */
-    -ms-interpolation-mode: bicubic; /* [3] */
+    image-rendering: auto;
 }
 
 /*
@@ -24,6 +24,7 @@ video {
     vertical-align: middle;
 }
 
-object, video {
+object,
+video {
     max-width: 100%;
 }
