@@ -19,7 +19,7 @@ module.exports = function() {
             config: {
                 cssPathSvg: '../images/spritesheet/sprite-min.svg',
                 cssPathNoSvg: '../images/spritesheet/sprite-min.png',
-                templateSrc: 'src/scss/vendor/template.tpl',
+                templateSrc: 'src/spritesheet/config/template.tpl',
                 templateDest: 'src/scss/vendor/_sprite.scss',
                 padding: 10,
                 positioning: 'vertical'
@@ -66,8 +66,11 @@ module.exports = function() {
 
         javascript: {
             input: 'src/js/**/*.js',
+            exclude: '!src/js/vendor/**/*.js',
             output: 'js/',
-            suffix: '.min'
+            rename: {
+                suffix: '.min'
+            }
         },
 
         images: {

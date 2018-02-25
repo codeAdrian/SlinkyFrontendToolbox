@@ -13,6 +13,7 @@
     },
     "scripts": {
         "slinky:setup": "npm install",
+        "clean": "gulp clean-output",
         "dev": "gulp",
         "dev:watch": "gulp",
         "assets": "gulp watch-assets",
