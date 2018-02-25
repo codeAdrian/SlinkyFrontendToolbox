@@ -20,8 +20,8 @@ module.exports = function() {
         fontsInput: 'src/fonts/**/*.*',
         fontsOutput: 'fonts/',
 
-        spritesInput: 'src/spritesheet/**/*.*',
-        spritesOutput: '/images/spritesheet',
+        spritesInput: 'src/spritesheet/**/*.svg',
+        spritesOutput: 'images/spritesheet/',
 
         /**
          * CSS Input/Output Config

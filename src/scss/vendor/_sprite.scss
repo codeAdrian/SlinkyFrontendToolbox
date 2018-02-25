@@ -1,0 +1,69 @@
+.icon {
+    &::before {
+        content: ' ';
+        background-image: url("../images/spritesheet/sprite-min.svg");
+        background-repeat: no-repeat;
+        background-size: 172px 281px;
+        display: inline-block;
+        .no-svg & {
+            background-image: url("../images/spritesheet/sprite-min.png");
+        }
+    }
+}
+
+.icon-logo {
+    &::before {
+        background-position: -10px -10px;
+        height: 42px;
+        width: 152px;
+    }
+}
+.icon-icreate {
+    &::before {
+        background-position: -10px -62px;
+        height: 36px;
+        width: 129px;
+    }
+}
+.icon-confirmation-tick {
+    &::before {
+        background-position: -10px -108px;
+        height: 42px;
+        width: 42px;
+    }
+}
+.icon-chevron-left {
+    &::before {
+        background-position: -10px -160px;
+        height: 20px;
+        width: 13px;
+    }
+}
+.icon-chevron-right {
+    &::before {
+        background-position: -10px -190px;
+        height: 20px;
+        width: 13px;
+    }
+}
+.icon-facebook-ico {
+    &::before {
+        background-position: -10px -220px;
+        height: 12px;
+        width: 12px;
+    }
+}
+.icon-instagram-ico {
+    &::before {
+        background-position: -10px -242px;
+        height: 12px;
+        width: 12px;
+    }
+}
+.icon-facebook-share {
+    &::before {
+        background-position: -10px -264px;
+        height: 7px;
+        width: 4px;
+    }
+}
