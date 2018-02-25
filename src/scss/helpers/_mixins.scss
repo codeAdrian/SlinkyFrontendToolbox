@@ -7,11 +7,11 @@
  * http://www.cssmojo.com/the-very-latest-clearfix-reloaded/
  */
 
-@mixin clearfix() {
-    &:after {
-        content: '';
+@mixin clearfix {
+    &::after {
         display: block;
         clear: both;
+        content: '';
     }
 }
 

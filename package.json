@@ -18,6 +18,8 @@
         "dev:compile:sass": "gulp compile-sass",
         "dev:minify:javascript": "gulp minify-javascript",
         "dev:minify:images": "gulp minify-images",
+        "dev:lint:javascript": "gulp lint-javascript",
+        "dev:lint:sass": "gulp lint-sass",
         "dev:watch:sass": "gulp watch-compile-sass",
         "dev:watch:javascript": "gulp watch-minify-javascript",
         "dev:watch:images": "gulp watch-minify-images"

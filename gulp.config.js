@@ -18,30 +18,18 @@ module.exports = function() {
             '-----------------------------------------------------------------',
 
         /**
-         * SCSS Linter Config
-         */
-
-        scssLintConfig: {
-            options: {
-                formatter: 'stylish',
-                'merge-default-rules': true
-            },
-            files: { ignore: '**/normalize.scss' }
-        },
-
-        /**
          * CSS Input/Output Config
          */
 
-        cssInput: '/src/scss/**/*.scss',
-        cssOutput: '/css/',
+        cssInput: 'src/scss/**/*.scss',
+        cssOutput: 'css/',
 
         /**
          * Javascript Input/Output Config
          */
 
-        jsSkinInput: '/src/js/**/*.js',
-        jsSkinOutput: '/js/',
+        jsSkinInput: 'src/js/**/*.js',
+        jsSkinOutput: 'js/',
 
         /**
          * Javascript Rename Config
@@ -53,8 +41,8 @@ module.exports = function() {
          * Images Input/Output Config
          */
 
-        imageInput: '/src/images/**/*.{jpg,jpeg,gif,png,svg}',
-        imageOutput: '/images/',
+        imageInput: 'src/images/**/*.{jpg,jpeg,gif,png,svg}',
+        imageOutput: 'images/',
 
         /**
          * Images Rename Config
