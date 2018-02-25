@@ -12,17 +12,18 @@ module.exports = function() {
 
         sprites: {
             input: 'src/spritesheet/**/*.svg',
-            output: 'images/spritesheet/',
-            tempOutput: 'src/images/spritesheet/sprite',
-            templatePath: 'src/scss/vendor/',
-            suffix: '-min',
+            output: 'src/',
+            filter: '**/*.svg',
             config: {
-                cssPathSvg: '../images/spritesheet/sprite-min.svg',
-                cssPathNoSvg: '../images/spritesheet/sprite-min.png',
-                templateSrc: 'src/spritesheet/config/template.tpl',
-                templateDest: 'src/scss/vendor/_sprite.scss',
+                cssFile: 'scss/vendor/_sprites.scss',
+                preview: false,
+                templates: { scss: true },
                 padding: 10,
-                positioning: 'vertical'
+                svgPath: '../images/spritesheet/sprites-min.svg',
+                pngPath: '../images/spritesheet/sprites-min.png',
+                svg: {
+                    sprite: 'images/spritesheet/sprites.svg'
+                }
             }
         },
 

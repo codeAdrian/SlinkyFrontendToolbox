@@ -52,12 +52,13 @@ gulp.task('minify-images', function() {
 \*------------------------------------------------------------*/
 
 gulp.task('generate-spritesheet', function() {
-    gulp
+    return gulp
         .src(config.sprites.input)
-        .pipe($.svgSpritesheet(config.sprites.config))
-        .pipe(gulp.dest(config.sprites.tempOutput + '.svg'))
+        .pipe($.svgSprites(config.sprites.config))
+        .pipe(gulp.dest(config.sprites.output))
+        .pipe($.filter(config.sprites.filter))
         .pipe($.svg2png())
-        .pipe(gulp.dest(config.sprites.tempOutput + '.png'));
+        .pipe(gulp.dest(config.sprites.output));
 });
 
 /*------------------------------------------------------------*\
@@ -146,7 +147,7 @@ gulp.task('watch-generate-spritesheet', function() {
         .watch([config.sprites.input], ['generate-spritesheet'])
         .on('change', function(event) {
             log(
-                'Spritesheet files: ' +
+                'Spritesheet file: ' +
                     event.path +
                     ' was ' +
                     event.type +
