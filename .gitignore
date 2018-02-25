@@ -88,7 +88,6 @@ includes/config.php
 .phpstorm.meta.php
 
 # Gulp
-/gulpfile.js
 /node_modules
 
 # Logs
