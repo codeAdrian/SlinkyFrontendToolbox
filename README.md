@@ -167,7 +167,7 @@ http://browserl.ist/
 https://github.com/sindresorhus/gulp-autoprefixer
 
 Spritesheet Generator config:
-https://github.com/frontendbeast/gulp-svg-spritesheet
+https://github.com/shakyshane/gulp-svg-sprites
 
 Favicon Generator:
 https://github.com/evilebottnawi/favicons
