@@ -1,80 +1,83 @@
-/**
- * JSCS config docs:
- * -----------------
- *
- * https://github.com/jscs-dev/node-jscs/tree/master/presets
- * http://jshint.com/docs/options/
- * https://github.com/sasstools/sass-lint
- *
- */
-
 module.exports = function() {
     var config = {
-        /**
-         * Gulp config
-         */
-
-        consoleDivider:
-            '-----------------------------------------------------------------',
-
-        fontsInput: 'src/fonts/**/*.*',
-        fontsOutput: 'fonts/',
-
-        spritesInput: 'src/spritesheet/**/*.svg',
-        spritesOutput: 'images/spritesheet/',
-
-        /**
-         * CSS Input/Output Config
-         */
-
-        cssInput: 'src/scss/**/*.scss',
-        cssOutput: 'css/',
-
-        /**
-         * Javascript Input/Output Config
-         */
-
-        jsSkinInput: 'src/js/**/*.js',
-        jsSkinOutput: 'js/',
-
-        /**
-         * Javascript Rename Config
-         */
-
-        jsRename: { suffix: '.min' },
-
-        /**
-         * Images Input/Output Config
-         */
-
-        imageInput: 'src/images/**/*.{jpg,jpeg,gif,png,svg}',
-        imageOutput: 'images/',
-
-        /**
-         * Images Rename Config
-         */
-
-        imgRename: {
-            suffix: '-min'
+        gulp: {
+            consoleDivider:
+                '---------------------------------------------------------------------'
         },
 
-        /**
-         * SASS Config
-         */
-
-        sass: {
-            errLogToConsole: true,
-            outputStyle: 'compressed'
+        fonts: {
+            input: 'src/fonts/**/*.*',
+            output: 'fonts/'
         },
 
-        /**
-         * Autoprefixer Config
-         */
+        sprites: {
+            input: 'src/spritesheet/**/*.svg',
+            output: 'images/spritesheet/',
+            tempOutput: 'src/images/spritesheet/sprite',
+            templatePath: 'src/scss/vendor/',
+            suffix: '-min',
+            config: {
+                cssPathSvg: '../images/spritesheet/sprite-min.svg',
+                cssPathNoSvg: '../images/spritesheet/sprite-min.png',
+                templateSrc: 'src/scss/vendor/template.tpl',
+                templateDest: 'src/scss/vendor/_sprite.scss',
+                padding: 10,
+                positioning: 'vertical'
+            }
+        },
 
-        autoprefixer: {
-            browsers: ['last 4 versions', 'not ie <= 8'],
-            cascade: false
+        favicons: {
+            input: 'src/favicon.png',
+            output: 'images/favicon/',
+            config: {
+                appName: 'Webite',
+                appDescription: 'This is my website',
+                developerName: 'Inchoo',
+                developerURL: 'https://www.inchoo.net/',
+                background: '#fff',
+                path: 'images/favicon/',
+                url: 'https://www.project.loc',
+                display: 'standalone',
+                orientation: 'portrait',
+                start_url: '/?homescreen=1',
+                version: 1.0,
+                logging: false,
+                online: false,
+                html: 'favicons.html',
+                pipeHTML: true,
+                replace: true
+            }
+        },
+
+        css: {
+            input: 'src/scss/**/*.scss',
+            output: 'css/',
+
+            autoprefixer: {
+                browsers: ['last 4 versions', 'not ie <= 8'],
+                cascade: false
+            },
+
+            sass: {
+                errLogToConsole: true,
+                outputStyle: 'compressed'
+            }
+        },
+
+        javascript: {
+            input: 'src/js/**/*.js',
+            output: 'js/',
+            suffix: '.min'
+        },
+
+        images: {
+            input: 'src/images/**/*.{jpg,jpeg,gif,png,svg}',
+            output: 'images/',
+            rename: {
+                suffix: '-min'
+            }
         }
     };
+
     return config;
 };

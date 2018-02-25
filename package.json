@@ -1,6 +1,6 @@
 {
     "name": "slinky-frontend-toolbox",
-    "version": "3.2.0",
+    "version": "3.2.1",
     "license": "(MIT OR Apache-2.0)",
     "repository": {
         "type": "git",
@@ -12,23 +12,26 @@
         "url": "http://codeadrian.github.io"
     },
     "scripts": {
+        "slinky:setup": "npm install",
         "dev": "gulp",
-        "dev:init": "npm install",
         "dev:watch": "gulp",
+        "assets": "gulp watch-assets",
+        "assets:watch": "gulp watch-assets",
+        "assets:deploy": "gulp deploy-assets",
+        "test": "gulp lint",
         "dev:compile:sass": "gulp compile-sass",
         "dev:minify:javascript": "gulp minify-javascript",
-        "dev:minify:images": "gulp minify-images",
         "dev:lint:javascript": "gulp lint-javascript",
         "dev:lint:sass": "gulp lint-sass",
         "dev:watch:sass": "gulp watch-compile-sass",
-        "dev:watch:javascript": "gulp watch-minify-javascript",
-        "dev:watch:images": "gulp watch-minify-images"
+        "dev:watch:javascript": "gulp watch-minify-javascript"
     },
     "devDependencies": {
         "del": "^3.0.0",
         "gulp": "^3.9.1",
         "gulp-autoprefixer": "^4.1.0",
         "gulp-cli": "^2.0.1",
+        "gulp-favicons": "^2.2.7",
         "gulp-if": "^2.0.2",
         "gulp-imagemin": "^4.1.0",
         "gulp-jscs": "^4.1.0",
