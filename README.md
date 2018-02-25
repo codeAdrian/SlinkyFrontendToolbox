@@ -2,6 +2,12 @@
 
 **_*Everything and the kitchen sink!*_**
 
+This is the ultimate toolbox for frontend developers powered by Node and Gulp.
+
+It contains SASS compilation, code linting, code minification, image and font assets handler, spritesheet generator and favicon generator.
+
+Default config for file structure and build structure was made with creating Magento themes in mind, but can be easily configured.
+
 ## General Information
 
 **Author:** Adrian Bece <br/>
