@@ -5,86 +5,145 @@
 **Author:** Adrian Bece <br/>
 **License:** MIT OR Apache 2.0 <br/>
 **Version:** 3.2.1 <br/>
-**Features:**
 
-* Gulp tasks and watchers
-* SASS/SCSS Compilation
-* SASS/SCSS Linter
-* Compass SASS/SCSS Vertical Rhythm Included
-* Autoprefixer Included
-* Javascript Minification
-* Javascript Minification
+## Features
+
+**Watchers (with linters):**
+
+* SASS / SCSS
+* JavaScript
+* Images
+* Fonts
+
+**Linters:**
+
+* SASS / SCSS Lint
+* JavaScript Lint
+
+**Tools:**
+
+* Configs for Gulp and Linters
+* Autoprefixer
+* Compass Vertical Rhythm
 * Image Minification
 
 ## Requirements
 
-* NodeJS version 8 and above (excluded 9)
+* NodeJS version 8.x (version 9.x not supported)
 
 ## Installation
 
-In Parent folder, run <br/>
-`npm run dev:init`
+In Parent folder, run
 
-## Commands
+```shell
+ npm run dev:init
+```
+
+## NPM Scripts
 
 Run the scripts from the parent folder
 
-Default Watcher - runs all watchers (SCSS/SASS, Javascript, Images)
+### Default Gulp Watcher
 
+Runs all watchers (SCSS/SASS, Javascript, Images)
+
+```shell
+npm run dev
 ```
+
+```shell
 npm run dev:watch
 ```
 
-Task - Compiles SCSS/SASS to CSS
+### Gulp Tasks
 
-```
+Compiles SCSS/SASS to CSS
+
+```shell
 npm run dev:compile:sass
 ```
 
-Task - Minifies Javascript
+Minifies Javascript
 
-```
+```shell
 npm run dev:minify:javascript
 ```
 
-Task - Minifies Images
+Minifies Images
 
-```
+```shell
 npm run dev:minify:images
 ```
 
-Watcher - Compiles SCSS/SASS to CSS
+Lints Javascript
 
+```shell
+npm run dev:lint:javascript
 ```
+
+Lints SASS / SCSS
+
+```shell
+npm run dev:lint:sass
+```
+
+### Gulp Watchers
+
+Compiles SCSS/SASS to CSS
+
+```shell
 npm run dev:watch:sass
 ```
 
-Watcher - Minifies Javascript
+Minifies Javascript
 
-```
+```shell
 npm run cev:watch:javascript
 ```
 
-Watcher - Minifies Images
+Minifies Images
 
-```
+```shell
 npm run dev:watch:images
 ```
 
 ## Configuration
 
-### Autoprefixer config
+**Only edit these files when necessary. The current setup ensures best practices when writing Javascript and SASS code.**
 
-In package.json, browserslist config:
+### Gulp Config
 
-```
-  "browserslist": [
-    "last 4 versions",
-    "not ie <= 8"
-  ],
-```
+Gulp config is handled by the `gulp.config.js` located in the parent folder. Following definitions can be found there:
 
-Use http://browserl.ist/ for config.
+* File input and output paths
+* File suffixes
+* SASS compiler config
+* Autoprefixer config
+
+#### Note
+
+Use http://browserl.ist/ for Autoprefixer config.
+
+### Javascript Linter Config
+
+Javascript config is handled by the `.jscrc` and `jshintrc` files for JSRC and JSHint respectively.
+
+JSRC is a code style linter and formatter, while JSHint is a code quality tool.
+
+#### Note:
+
+JSRC config info: http://jscs.info/rules
+
+JSHint config info:
+http://jshint.com/docs/options/
+
+### SASS / SCSS Linter Config
+
+SCSS linter config is handled by the `.sasslintrc` file in parent folder.
+
+#### Note:
+
+SCSS linter config info: https://github.com/sasstools/sass-lint
 
 ## License
 

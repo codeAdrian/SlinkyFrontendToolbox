@@ -17,6 +17,12 @@ module.exports = function() {
         consoleDivider:
             '-----------------------------------------------------------------',
 
+        fontsInput: 'src/fonts/**/*.*',
+        fontsOutput: 'fonts/',
+
+        spritesInput: 'src/spritesheet/**/*.*',
+        spritesOutput: '/images/spritesheet',
+
         /**
          * CSS Input/Output Config
          */
