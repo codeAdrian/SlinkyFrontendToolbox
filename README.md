@@ -1,31 +1,47 @@
 # Slinky Frontend Toolbox
 
+**_*Everything and the kitchen sink!*_**
+
 ## General Information
 
 **Author:** Adrian Bece <br/>
 **License:** MIT OR Apache 2.0 <br/>
-**Version:** 3.2.1 <br/>
+**Version:** 3.2.2 <br/>
 
 ## Features
 
-**Watchers (with linters):**
+### Dev watchers (with linters)
 
-* SASS / SCSS
-* JavaScript
-* Images
-* Fonts
+* SASS / SCSS compiler and minifier
+* JavaScript minifier
 
-**Linters:**
+### Assets watchers
+
+* Image minification
+* Font Handler
+* Favicon generation
+* Spritesheet generation
+
+### Linters:
 
 * SASS / SCSS Lint
 * JavaScript Lint
 
-**Tools:**
+### Tools:
 
-* Configs for Gulp and Linters
+* Spritesheet Generator
+* Favicon Generator
+* Font Handler
+* Image Minification
 * Autoprefixer
 * Compass Vertical Rhythm
-* Image Minification
+
+### Configs:
+
+* Gulp
+* SASS linters
+* JSHint
+* JSCS
 
 ## Requirements
 
@@ -36,16 +52,16 @@
 In Parent folder, run
 
 ```shell
- npm run dev:init
+ npm run slinky:setup
 ```
 
 ## NPM Scripts
 
 Run the scripts from the parent folder
 
-### Default Gulp Watcher
+### Dev Watcher
 
-Runs all watchers (SCSS/SASS, Javascript, Images)
+Runs dev watchers with linters (SCSS and JavaScript)
 
 ```shell
 npm run dev
@@ -55,7 +71,35 @@ npm run dev
 npm run dev:watch
 ```
 
-### Gulp Tasks
+### Assets Watcher
+
+Runs assets watchers (Fonts, Images, Spritesheet, Favicon)
+
+```shell
+npm run assets
+```
+
+```shell
+npm run assets:watch
+```
+
+### Clean Task
+
+**Removes all files** from the following folders `/js`, `/css`, `images`, `fonts`.
+
+```shell
+npm run clean
+```
+
+### Test Task
+
+Runs Javascript linter and SASS linter.
+
+```shell
+npm run test
+```
+
+### Individual Tasks
 
 Compiles SCSS/SASS to CSS
 
@@ -67,12 +111,6 @@ Minifies Javascript
 
 ```shell
 npm run dev:minify:javascript
-```
-
-Minifies Images
-
-```shell
-npm run dev:minify:images
 ```
 
 Lints Javascript
@@ -87,7 +125,7 @@ Lints SASS / SCSS
 npm run dev:lint:sass
 ```
 
-### Gulp Watchers
+### Individual Watchers
 
 Compiles SCSS/SASS to CSS
 
@@ -99,12 +137,6 @@ Minifies Javascript
 
 ```shell
 npm run cev:watch:javascript
-```
-
-Minifies Images
-
-```shell
-npm run dev:watch:images
 ```
 
 ## Configuration
@@ -119,10 +151,20 @@ Gulp config is handled by the `gulp.config.js` located in the parent folder. Fol
 * File suffixes
 * SASS compiler config
 * Autoprefixer config
+* Spritesheet generator config
+* Favicon generator config
 
 #### Note
 
-Use http://browserl.ist/ for Autoprefixer config.
+Autoprefixer config:
+http://browserl.ist/
+https://github.com/sindresorhus/gulp-autoprefixer
+
+Spritesheet Generator config:
+https://github.com/frontendbeast/gulp-svg-spritesheet
+
+Favicon Generator:
+https://github.com/evilebottnawi/favicons
 
 ### Javascript Linter Config
 
