@@ -1,64 +1,82 @@
-# Echo Frontend Toolkit
+# Slinky Frontend Toolbox
 
 ## General Information
+
 **Author:** Adrian Bece <br/>
 **License:** MIT OR Apache 2.0 <br/>
-**Version:** 3.1.0 <br/>
+**Version:** 3.2.1 <br/>
 **Features:**
+
 * Gulp tasks and watchers
 * SASS/SCSS Compilation
+* SASS/SCSS Linter
 * Compass SASS/SCSS Vertical Rhythm Included
 * Autoprefixer Included
+* Javascript Minification
 * Javascript Minification
 * Image Minification
 
 ## Requirements
+
 * NodeJS version 8 and above (excluded 9)
 
 ## Installation
+
 In Parent folder, run <br/>
-```npm install```
+`npm run dev:init`
 
 ## Commands
+
 Run the scripts from the parent folder
 
 Default Watcher - runs all watchers (SCSS/SASS, Javascript, Images)
+
 ```
-npm run echo:watch
+npm run dev:watch
 ```
 
 Task - Compiles SCSS/SASS to CSS
+
 ```
-npm run echo:compile:sass
+npm run dev:compile:sass
 ```
 
 Task - Minifies Javascript
+
 ```
-npm run echo:minify:javascript
+npm run dev:minify:javascript
 ```
 
 Task - Minifies Images
+
 ```
-npm run echo:minify:images
+npm run dev:minify:images
 ```
 
 Watcher - Compiles SCSS/SASS to CSS
+
 ```
-npm run echo:watch:sass
+npm run dev:watch:sass
 ```
 
 Watcher - Minifies Javascript
+
 ```
-npm run echo:watch:javascript
+npm run cev:watch:javascript
 ```
+
 Watcher - Minifies Images
+
 ```
-npm run echo:watch:images
+npm run dev:watch:images
 ```
 
 ## Configuration
+
 ### Autoprefixer config
+
 In package.json, browserslist config:
+
 ```
   "browserslist": [
     "last 4 versions",
@@ -69,6 +87,7 @@ In package.json, browserslist config:
 Use http://browserl.ist/ for config.
 
 ## License
+
 MIT License
 Copyright (c) 2018. Adrian Bece
 

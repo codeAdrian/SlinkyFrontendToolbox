@@ -12,19 +12,15 @@
         "url": "http://codeadrian.github.io"
     },
     "scripts": {
-        "dev": "gulp --gulpfile src/gulp/gulpfile.js",
-        "dev:watch": "gulp --gulpfile src/gulp/gulpfile.js",
-        "dev:compile:sass": "gulp compile-sass --gulpfile src/gulp/gulpfile.js",
-        "dev:minify:javascript":
-            "gulp minify-javascript --gulpfile src/gulp/gulpfile.js",
-        "dev:minify:images":
-            "gulp minify-images --gulpfile src/gulp/gulpfile.js",
-        "dev:watch:sass":
-            "gulp watch-compile-sass --gulpfile src/gulp/gulpfile.js",
-        "dev:watch:javascript":
-            "gulp watch-minify-javascript --gulpfile src/gulp/gulpfile.js",
-        "dev:watch:images":
-            "gulp watch-minify-images --gulpfile src/gulp/gulpfile.js"
+        "dev": "gulp",
+        "dev:init": "npm install",
+        "dev:watch": "gulp",
+        "dev:compile:sass": "gulp compile-sass",
+        "dev:minify:javascript": "gulp minify-javascript",
+        "dev:minify:images": "gulp minify-images",
+        "dev:watch:sass": "gulp watch-compile-sass",
+        "dev:watch:javascript": "gulp watch-minify-javascript",
+        "dev:watch:images": "gulp watch-minify-images"
     },
     "devDependencies": {
         "gulp": "^3.9.1",

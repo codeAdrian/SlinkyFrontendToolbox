@@ -33,15 +33,15 @@ module.exports = function() {
          * CSS Input/Output Config
          */
 
-        cssInput: '../scss/**/*.scss',
-        cssOutput: '../../css/',
+        cssInput: '/src/scss/**/*.scss',
+        cssOutput: '/css/',
 
         /**
          * Javascript Input/Output Config
          */
 
-        jsSkinInput: '../js/**/*.js',
-        jsSkinOutput: '../../js/',
+        jsSkinInput: '/src/js/**/*.js',
+        jsSkinOutput: '/js/',
 
         /**
          * Javascript Rename Config
@@ -53,8 +53,8 @@ module.exports = function() {
          * Images Input/Output Config
          */
 
-        imageInput: '../images/**/*.{jpg,jpeg,gif,png,svg}',
-        imageOutput: '../../images/',
+        imageInput: '/src/images/**/*.{jpg,jpeg,gif,png,svg}',
+        imageOutput: '/images/',
 
         /**
          * Images Rename Config
