@@ -10,9 +10,18 @@ Default config for file structure and build structure was made with creating Mag
 
 ## General Information
 
-**Author:** Adrian Bece <br/>
-**License:** MIT OR Apache 2.0 <br/>
-**Version:** 3.2.2 <br/>
+`src/` is your working directory. Keep all your working files here, Gulp tasks will take care of distributing assets and code to their respective build locations.
+
+### Folders in `src` folder:
+
+* `fonts` - Folder for theme fonts files (any files and extensions, including json files).
+* `images` - Folder for theme image files (jpg, jpeg, gif, png, svg).
+* `js` - Folder for Javascript files.
+* `js/vendor` - Folder for vendor Javascript files that will not be linted during build.
+* `scss` - Folder for SCSS / SASS files. `scss/styles.scss` is the main entry point.
+* `scss/vendor` - Folder for vendor SCSS files that will not be linted during build.
+
+**Please note:** Files that are added directly to the build folders (outside `src`) may get deleted during build or when the cleaning task is being run.
 
 ## Features
 
