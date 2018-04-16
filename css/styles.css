@@ -1,0 +1,1 @@
+textarea{resize:vertical}img{display:block;max-width:100%;font-style:italic;image-rendering:auto}audio,canvas,iframe,svg,video{vertical-align:middle}object,video{max-width:100%}body,html{width:100%;height:100%}@if ($debug-vertical-rhythm){body{@include debug-vertical-alignment}}@include establish-baseline;*,:after,:before{-webkit-box-sizing:inherit;box-sizing:inherit}
