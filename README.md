@@ -4,7 +4,7 @@
 
 This is the ultimate toolbox for frontend developers powered by Node and Gulp.
 
-It contains SASS compilation, code linting, code minification, image and font assets handler, spritesheet generator and favicon generator.
+It contains PostCSS compilation, code linting, code minification, image and font assets handler, spritesheet generator and favicon generator.
 
 Default config for file structure and build structure was made with creating Magento themes in mind, but can be easily configured.
 
@@ -14,12 +14,12 @@ Default config for file structure and build structure was made with creating Mag
 
 ### Folders in `src` folder:
 
-* `fonts` - Folder for theme fonts files (any files and extensions, including json files).
-* `images` - Folder for theme image files (jpg, jpeg, gif, png, svg).
-* `js` - Folder for Javascript files.
-* `js/vendor` - Folder for vendor Javascript files that will not be linted during build.
-* `scss` - Folder for SCSS / SASS files. `scss/styles.scss` is the main entry point.
-* `scss/vendor` - Folder for vendor SCSS files that will not be linted during build.
+*   `fonts` - Folder for theme fonts files (any files and extensions, including json files).
+*   `images` - Folder for theme image files (jpg, jpeg, gif, png, svg).
+*   `js` - Folder for Javascript files.
+*   `js/vendor` - Folder for vendor Javascript files that will not be linted during build.
+*   `src/css` - Folder for CSS / PCSS files. `css/styles.pcss` is the main entry point.
+*   `src/css/vendor` - Folder for vendor CSS / PCSS files that will not be linted during build.
 
 **Please note:** Files that are added directly to the build folders (outside `src`) may get deleted during build or when the cleaning task is being run.
 
@@ -27,40 +27,40 @@ Default config for file structure and build structure was made with creating Mag
 
 ### Dev watchers (with linters)
 
-* SASS / SCSS compiler and minifier
-* JavaScript minifier
+*   SASS / SCSS compiler and minifier
+*   JavaScript minifier
 
 ### Assets watchers
 
-* Image minification
-* Font Handler
-* Favicon generation
-* Spritesheet generation
+*   Image minification
+*   Font Handler
+*   Favicon generation
+*   Spritesheet generation
 
 ### Linters:
 
-* SASS / SCSS Lint
-* JavaScript Lint
+*   SASS / SCSS Lint
+*   JavaScript Lint
 
 ### Tools:
 
-* Spritesheet Generator
-* Favicon Generator
-* Font Handler
-* Image Minification
-* Autoprefixer
-* Compass Vertical Rhythm
+*   Spritesheet Generator
+*   Favicon Generator
+*   Font Handler
+*   Image Minification
+*   Autoprefixer
+*   Compass Vertical Rhythm
 
 ### Configs:
 
-* Gulp
-* SASS linters
-* JSHint
-* JSCS
+*   Gulp
+*   SASS linters
+*   JSHint
+*   JSCS
 
 ## Requirements
 
-* NodeJS version 8.x (version 9.x not supported)
+*   NodeJS version 8.x (version 9.x not supported)
 
 ## Installation
 
@@ -119,7 +119,7 @@ npm run test
 Compiles SCSS/SASS to CSS
 
 ```shell
-npm run dev:compile:sass
+npm run dev:compile:css
 ```
 
 Minifies Javascript
@@ -137,7 +137,7 @@ npm run dev:lint:javascript
 Lints SASS / SCSS
 
 ```shell
-npm run dev:lint:sass
+npm run dev:lint:css
 ```
 
 ### Individual Watchers
@@ -145,7 +145,7 @@ npm run dev:lint:sass
 Compiles SCSS/SASS to CSS
 
 ```shell
-npm run dev:watch:sass
+npm run dev:watch:css
 ```
 
 Minifies Javascript
@@ -162,12 +162,12 @@ npm run cev:watch:javascript
 
 Gulp config is handled by the `gulp.config.js` located in the parent folder. Following definitions can be found there:
 
-* File input and output paths
-* File suffixes
-* SASS compiler config
-* Autoprefixer config
-* Spritesheet generator config
-* Favicon generator config
+*   File input and output paths
+*   File suffixes
+*   SASS compiler config
+*   Autoprefixer config
+*   Spritesheet generator config
+*   Favicon generator config
 
 #### Note
 
@@ -194,13 +194,13 @@ JSRC config info: http://jscs.info/rules
 JSHint config info:
 http://jshint.com/docs/options/
 
-### SASS / SCSS Linter Config
+### CSS Linter Config
 
-SCSS linter config is handled by the `.sasslintrc` file in parent folder.
+CSS linter config is handled by the `.stylelintrc` file in parent folder.
 
 #### Note:
 
-SCSS linter config info: https://github.com/sasstools/sass-lint
+CSS linter config info: https://stylelint.io/user-guide/rules/
 
 ## License
 
