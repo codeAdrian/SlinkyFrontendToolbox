@@ -7,16 +7,16 @@
  * http://www.cssmojo.com/the-very-latest-clearfix-reloaded/
  */
 
-@mixin clearfix {
-    &::after {
-        display: block;
-        clear: both;
-        content: '';
-    }
+@define-mixin clearfix {
+	&::after {
+		display: block;
+		clear: both;
+		content: "";
+	}
 }
 
 /*------------------------------------------------------------*\
-                   POSITION MIXINS
+                        POSITION MIXINS
 \*------------------------------------------------------------*/
 
 /*
@@ -24,12 +24,12 @@
  * Used by other mixins
  */
 
-@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
-    position: $position;
-    top: $top;
-    right: $right;
-    bottom: $bottom;
-    left: $left;
+@define-mixin position $position, $top, $right, $bottom, $left {
+	position: $position;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
 }
 
 /*
@@ -39,8 +39,8 @@
  * @require {mixin} position
  */
 
-@mixin absolute($args...) {
-    @include position(absolute, $args...);
+@define-mixin absolute $top, $right, $bottom, $left {
+	@mixin position absolute, $top, $right, $bottom, $left;
 }
 
 /*
@@ -50,6 +50,6 @@
  * @require {mixin} position
  */
 
-@mixin fixed($args...) {
-    @include position(fixed, $args...);
+@define-mixin fixed $top, $right, $bottom, $left {
+	@mixin position fixed, $top, $right, $bottom, $left;
 }

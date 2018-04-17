@@ -23,8 +23,9 @@ var gulp = require("gulp"),
 	cssnano = require("cssnano"),
 	atImport = require("postcss-easy-import"),
 	lost = require("lost"),
-	mixins = require("postcss-mixins");
-cssnext = require("postcss-cssnext");
+	mixins = require("postcss-mixins"),
+	nested = require("postcss-nested"),
+	cssnext = require("postcss-cssnext");
 
 var config = require("./gulp.config")();
 
@@ -108,11 +109,11 @@ gulp.task("minify-javascript", ["lint-javascript"], function() {
 });
 
 /*------------------------------------------------------------*\
-                   TASK - LINT SASS / SCSS
+                   TASK - LINT CSS
 \*------------------------------------------------------------*/
 
 gulp.task("lint-css", function() {
-	return gulp.src("src/css/**/*.{css,pcss}").pipe(
+	return gulp.src([config.css.inputAll, config.css.excludeVendor]).pipe(
 		$.stylelint({
 			reporters: [{ formatter: "string", console: true }]
 		})
@@ -120,19 +121,20 @@ gulp.task("lint-css", function() {
 });
 
 /*------------------------------------------------------------*\
-            TASK - COMPILE SASS, MINIFY
+            TASK - COMPILE CSS, MINIFY
 \*------------------------------------------------------------*/
 
 gulp.task("compile-css", ["lint-css"], function() {
 	var plugins = [
-		atImport({ extensions: [".css", ".pcss"], prefix: "_" }),
+		atImport(config.css.config.atImport),
 		mixins,
+		nested,
 		lost,
-		cssnext,
-		cssnano({ autoprefixer: false })
+		cssnext(config.css.config.cssNext),
+		cssnano(config.css.config.cssNano)
 	];
 	return gulp
-		.src(config.css.input)
+		.src(config.css.inputMain)
 		.pipe($.postcss(plugins))
 		.pipe(
 			$.rename({
@@ -189,12 +191,12 @@ gulp.task("watch-move-fonts", function() {
 });
 
 /*------------------------------------------------------------*\
-            WATCHER - COMPILE SASS, MINIFY
+            WATCHER - COMPILE CSS, MINIFY
 \*------------------------------------------------------------*/
 
 gulp.task("watch-compile-css", function() {
 	return gulp
-		.watch(["src/css/**/*.{css,pcss}"], ["compile-css"])
+		.watch([config.css.inputAll], ["compile-css"])
 		.on("change", function(event) {
 			log(
 				"PostCSS file " +

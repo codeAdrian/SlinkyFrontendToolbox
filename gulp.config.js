@@ -15,7 +15,7 @@ module.exports = function() {
 			output: "src/",
 			filter: "**/*.svg",
 			config: {
-				cssFile: "scss/vendor/_sprites.scss",
+				cssFile: "css/vendor/_sprites.pcss",
 				preview: false,
 				templates: { scss: true },
 				padding: 10,
@@ -51,12 +51,17 @@ module.exports = function() {
 		},
 
 		css: {
-			input: "src/css/**/[^_]*.{css,pcss}",
+			inputMain: "src/css/**/[^_]*.{css,pcss}",
+			inputAll: "src/css/**/*.{css,pcss}",
+			excludeVendor: "!src/css/vendor/**/*",
 			output: "css/",
-
-			sass: {
-				errLogToConsole: true,
-				outputStyle: "compressed"
+			config: {
+				atImport: { extensions: [".css", ".pcss"], prefix: "_" },
+				cssNext: {
+					browsers: ["last 3 versions", "not ie<10"],
+					cascade: false
+				},
+				cssNano: { autoprefixer: false }
 			}
 		},
 
