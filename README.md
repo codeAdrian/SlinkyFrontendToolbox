@@ -165,7 +165,7 @@ npm run dev:watch:javascript
 
 ## Configuration
 
-**Only edit these files when necessary. The current setup ensures best practices when writing Javascript and SASS code.**
+**Only edit these files when necessary. The current setup ensures best practices when writing Javascript and CSS code.**
 
 ### Gulp Config
 
@@ -173,7 +173,7 @@ Gulp config is handled by the `gulp.config.js` located in the parent folder. Fol
 
 *   File input and output paths
 *   File suffixes
-*   SASS compiler config
+*   PostCSS Compiler & Plugins config
 *   Autoprefixer config
 *   Spritesheet generator config
 *   Favicon generator config
