@@ -58,7 +58,6 @@ Default config for file structure and build structure was made with creating Mag
 *   Font Handler
 *   Image Minification
 *   Autoprefixer
-*   Compass Vertical Rhythm
 
 ### Configs:
 
