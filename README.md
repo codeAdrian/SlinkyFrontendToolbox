@@ -14,12 +14,12 @@ Default config for file structure and build structure was made with creating Mag
 
 ### Folders in `src` folder:
 
-*   `fonts` - Folder for theme fonts files (any files and extensions, including json files).
-*   `images` - Folder for theme image files (jpg, jpeg, gif, png, svg).
-*   `js` - Folder for Javascript files.
-*   `js/vendor` - Folder for vendor Javascript files that will not be linted during build.
-*   `src/css` - Folder for CSS / PCSS files. `css/styles.pcss` is the main entry point.
-*   `src/css/vendor` - Folder for vendor CSS / PCSS files that will not be linted during build.
+*   `fonts/` - Folder for theme fonts files (any files and extensions, including json files).
+*   `images/` - Folder for theme image files (jpg, jpeg, gif, png, svg).
+*   `js/` - Folder for Javascript files.
+*   `js/vendor/` - Folder for vendor Javascript files that will not be linted during build.
+*   `css/` - Folder for CSS / PCSS files. `css/styles.pcss` is the main entry point.
+*   `css/vendor/` - Folder for vendor CSS / PCSS files that will not be linted during build.
 
 **Please note:** Files that are added directly to the build folders (outside `src`) may get deleted during build or when the cleaning task is being run.
 
