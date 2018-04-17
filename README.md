@@ -37,6 +37,7 @@ Default config for file structure and build structure was made with creating Mag
 *   postcss-nested
 *   postcss-cssnext (with autoprefixer)
 *   cssnano
+*   lost grid
 
 ### Assets watchers
 
@@ -159,7 +160,7 @@ npm run dev:watch:css
 Minifies Javascript
 
 ```shell
-npm run cev:watch:javascript
+npm run dev:watch:javascript
 ```
 
 ## Configuration
