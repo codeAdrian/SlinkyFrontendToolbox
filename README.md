@@ -27,8 +27,16 @@ Default config for file structure and build structure was made with creating Mag
 
 ### Dev watchers (with linters)
 
-*   SASS / SCSS compiler and minifier
+*   PostCSS
 *   JavaScript minifier
+
+### PostCSS plugins
+
+*   postcss-easy-import
+*   postcss-mixins
+*   postcss-nested
+*   postcss-cssnext (with autoprefixer)
+*   cssnano
 
 ### Assets watchers
 
@@ -39,7 +47,7 @@ Default config for file structure and build structure was made with creating Mag
 
 ### Linters:
 
-*   SASS / SCSS Lint
+*   CSS Lint
 *   JavaScript Lint
 
 ### Tools:
@@ -76,7 +84,7 @@ Run the scripts from the parent folder
 
 ### Dev Watcher
 
-Runs dev watchers with linters (SCSS and JavaScript)
+Runs dev watchers with linters (CSS and JavaScript)
 
 ```shell
 npm run dev
@@ -116,7 +124,7 @@ npm run test
 
 ### Individual Tasks
 
-Compiles SCSS/SASS to CSS
+Compiles PCSS to CSS
 
 ```shell
 npm run dev:compile:css
@@ -134,7 +142,7 @@ Lints Javascript
 npm run dev:lint:javascript
 ```
 
-Lints SASS / SCSS
+Lints CSS
 
 ```shell
 npm run dev:lint:css
@@ -142,7 +150,7 @@ npm run dev:lint:css
 
 ### Individual Watchers
 
-Compiles SCSS/SASS to CSS
+Compiles PCSS to CSS
 
 ```shell
 npm run dev:watch:css
