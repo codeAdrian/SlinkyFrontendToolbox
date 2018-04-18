@@ -62,7 +62,7 @@ Default config for file structure and build structure was made with creating Mag
 ### Configs:
 
 *   Gulp
-*   SASS linters
+*   CSS linter
 *   JSHint
 *   JSCS
 
@@ -116,7 +116,7 @@ npm run clean
 
 ### Test Task
 
-Runs Javascript linter and SASS linter.
+Runs Javascript linter and CSS linter.
 
 ```shell
 npm run test
