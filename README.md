@@ -178,6 +178,8 @@ Gulp config is handled by the `gulp.config.js` located in the parent folder. Fol
 
 #### Note
 
+postcss-preset-env: https://preset-env.cssdb.org/features
+
 Autoprefixer config:
 http://browserl.ist/
 https://github.com/sindresorhus/gulp-autoprefixer
@@ -195,8 +197,6 @@ Javascript config is handled by the `.jscrc` and `jshintrc` files for JSRC and J
 JSRC is a code style linter and formatter, while JSHint is a code quality tool.
 
 #### Note:
-
-postcss-preset-env: https://preset-env.cssdb.org/features
 
 JSRC config info: http://jscs.info/rules
 
