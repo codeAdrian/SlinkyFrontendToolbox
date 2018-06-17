@@ -34,8 +34,7 @@ Default config for file structure and build structure was made with creating Mag
 
 *   postcss-easy-import
 *   postcss-mixins
-*   postcss-nested
-*   postcss-cssnext (with autoprefixer)
+*   postcss-preset-env (with autoprefixer)
 *   cssnano
 *   lost grid
 
@@ -196,6 +195,8 @@ Javascript config is handled by the `.jscrc` and `jshintrc` files for JSRC and J
 JSRC is a code style linter and formatter, while JSHint is a code quality tool.
 
 #### Note:
+
+postcss-preset-env: https://preset-env.cssdb.org/features
 
 JSRC config info: http://jscs.info/rules
 
