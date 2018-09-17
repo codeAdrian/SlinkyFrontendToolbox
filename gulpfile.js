@@ -260,7 +260,7 @@ gulp.task("dev:css:compile", ["slinky:css:lint"], function() {
 				extname: ".css"
 			})
 		)
-		.pipe($.sourcemaps.write("/maps"))
+		.pipe($.sourcemaps.write(config.sourcemaps.folder))
 		.pipe(gulp.dest(config.css.output));
 });
 
@@ -279,7 +279,7 @@ gulp.task("dev:js:compile", ["slinky:js:lint"], function() {
 		.pipe($.sourcemaps.identityMap())
 		.pipe($.rename(config.javascript.rename))
 		.pipe($.uglify().on("error", handleError))
-		.pipe($.sourcemaps.write("/maps"))
+		.pipe($.sourcemaps.write(config.sourcemaps.folder))
 		.pipe(gulp.dest(config.javascript.output));
 });
 
@@ -425,6 +425,7 @@ gulp.task("slinky:lint", ["slinky:css:lint", "slinky:js:lint"]);
 gulp.task("prod:assets:watch", [
 	"slinky:spritesheet:watch",
 	"slinky:images:watch",
+	"slinky:favicon:generate",
 	"slinky:fonts:watch"
 ]);
 
@@ -438,19 +439,28 @@ gulp.task("prod:assets:generate", [
 gulp.task("slinky:dev:watch", [
 	"dev:css:watch",
 	"dev:js:watch",
-	"prod:asses:watch"
+	"slinky:spritesheet:watch",
+	"slinky:images:watch",
+	"slinky:spritesheet:generate",
+	"slinky:fonts:watch"
 ]);
 
 gulp.task("slinky:dev:compile", [
 	"dev:css:compile",
 	"dev:js:compile",
-	"prod:asses:generate"
+	"slinky:images:generate",
+	"slinky:favicon:generate",
+	"slinky:spritesheet:generate",
+	"slinky:fonts:generate"
 ]);
 
 gulp.task("prod:prod:compile", [
 	"prod:css:compile",
 	"prod:js:compile",
-	"prod:asses:generate"
+	"slinky:images:generate",
+	"slinky:favicon:generate",
+	"slinky:spritesheet:generate",
+	"slinky:fonts:generate"
 ]);
 
 gulp.task("slinky:prod:watch", [
@@ -458,6 +468,7 @@ gulp.task("slinky:prod:watch", [
 	"prod:js:watch",
 	"slinky:spritesheet:watch",
 	"slinky:images:watch",
+	"slinky:spritesheet:generate",
 	"slinky:fonts:watch"
 ]);
 

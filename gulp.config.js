@@ -83,6 +83,10 @@ module.exports = function() {
 			rename: {
 				suffix: "-min"
 			}
+		},
+
+		sourcemaps: {
+			folder: "/maps"
 		}
 	};
 
