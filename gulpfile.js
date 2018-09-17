@@ -232,6 +232,26 @@ gulp.task("slinky:images:watch", ["slinky:images:generate"], function() {
 		});
 });
 
+/**
+ * Type: Watcher
+ * Environment: Global
+ * Dependency: n/a
+ * Description: Favicon Watcher
+ */
+gulp.task("slinky:favicon:watch", ["slinky:favicon:generate"], function() {
+	return gulp
+		.watch([config.sprites.input], ["slinky:favicon:generate"])
+		.on("change", function(event) {
+			log(
+				"Javascript file " +
+					event.path +
+					" was " +
+					event.type +
+					". Minifying Javascipt in PRODUCTION mode..."
+			);
+		});
+});
+
 /*------------------------------------------------------------*\
                     DEVELOPMENT TASKS
 \*------------------------------------------------------------*/
@@ -422,11 +442,24 @@ gulp.task("prod:js:watch", ["prod:js:compile"], function() {
 
 gulp.task("slinky:lint", ["slinky:css:lint", "slinky:js:lint"]);
 
-gulp.task("prod:assets:watch", [
-	"slinky:spritesheet:watch",
-	"slinky:images:watch",
-	"slinky:favicon:generate",
-	"slinky:fonts:watch"
+gulp.task("dev:code:generate", [
+	"dev:css:compile",
+	"dev:js:compile"
+]);
+
+gulp.task("dev:code:watch", [
+	"dev:css:watch",
+	"dev:js:watch"
+]);
+
+gulp.task("prod:code:generate", [
+	"prod:css:compile",
+	"prod:js:compile"
+]);
+
+gulp.task("prod:code:watch", [
+	"prod:css:watch",
+	"prod:js:watch"
 ]);
 
 gulp.task("prod:assets:generate", [
@@ -436,12 +469,10 @@ gulp.task("prod:assets:generate", [
 	"slinky:fonts:generate"
 ]);
 
-gulp.task("slinky:dev:watch", [
-	"dev:css:watch",
-	"dev:js:watch",
+gulp.task("prod:assets:watch", [
 	"slinky:spritesheet:watch",
 	"slinky:images:watch",
-	"slinky:spritesheet:generate",
+	"slinky:favicon:watch",
 	"slinky:fonts:watch"
 ]);
 
@@ -454,7 +485,16 @@ gulp.task("slinky:dev:compile", [
 	"slinky:fonts:generate"
 ]);
 
-gulp.task("prod:prod:compile", [
+gulp.task("slinky:dev:watch", [
+	"dev:css:watch",
+	"dev:js:watch",
+	"slinky:favicon:watch",
+	"slinky:images:watch",
+	"slinky:spritesheet:watch",
+	"slinky:fonts:watch"
+]);
+
+gulp.task("slinky:prod:compile", [
 	"prod:css:compile",
 	"prod:js:compile",
 	"slinky:images:generate",
@@ -466,9 +506,9 @@ gulp.task("prod:prod:compile", [
 gulp.task("slinky:prod:watch", [
 	"prod:css:watch",
 	"prod:js:watch",
-	"slinky:spritesheet:watch",
+	"slinky:favicon:watch",
 	"slinky:images:watch",
-	"slinky:spritesheet:generate",
+	"slinky:spritesheet:watch",
 	"slinky:fonts:watch"
 ]);
 
