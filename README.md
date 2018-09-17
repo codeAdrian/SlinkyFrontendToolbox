@@ -8,6 +8,10 @@ It contains PostCSS compilation, code linting, code minification, image and font
 
 Default config for file structure and build structure was made with creating Magento themes in mind, but can be easily configured.
 
+This toolbox works in 2 modes:
+* Development - non-minified CSS and JS compilation with SourceMaps
+* Production - minified and production-optimized CSS and JS without SourceMaps
+
 ## General Information
 
 `src/` is your working directory. Keep all your working files here, Gulp tasks will take care of distributing assets and code to their respective build locations.
@@ -74,92 +78,100 @@ Default config for file structure and build structure was made with creating Mag
 In Parent folder, run
 
 ```shell
- npm run slinky:setup
+ npm run setup
 ```
 
 ## NPM Scripts
 
 Run the scripts from the parent folder
 
-### Dev Watcher
+### Main Watcher Scripts
 
-Runs dev watchers with linters (CSS and JavaScript)
+#### Development
 
-```shell
-npm run dev
-```
+Runs all toolbox watchers (CSS, JS and Assets Watcher) in development mode
 
 ```shell
-npm run dev:watch
+ npm run dev:watch
 ```
-
-### Assets Watcher
-
-Runs assets watchers (Fonts, Images, Spritesheet, Favicon)
+<br/>
+Runs CSS and JS watcher in development mode
 
 ```shell
-npm run assets
+ npm run dev:code:watch
 ```
+<br/>
+
+#### Production
+
+Runs all toolbox watchers (CSS, JS and Assets Watcher) in production mode
 
 ```shell
-npm run assets:watch
+ npm run prod:watch
 ```
-
-### Clean Task
-
-**Removes all files** from the following folders `/js`, `/css`, `images`, `fonts`.
+<br/>
+Runs CSS and JS watcher in production mode
 
 ```shell
-npm run clean
+ npm run prod:code:watch
 ```
+<br/>
 
-### Test Task
+### Individual Scripts
 
-Runs Javascript linter and CSS linter.
+#### Development
+
+Runs all toolbox tasks (CSS, JS and Assets Task) in development mode
 
 ```shell
-npm run test
+ npm run dev:compile
 ```
-
-### Individual Tasks
-
-Compiles PCSS to CSS
+<br/>
+Runs CSS and JS tasks in development mode
 
 ```shell
-npm run dev:compile:css
+ npm run dev:code:generate
 ```
+<br/>
 
-Minifies Javascript
+#### Production
+
+
+Runs all toolbox tasks (CSS, JS and Assets Task) in production mode
 
 ```shell
-npm run dev:minify:javascript
+ npm run prod:compile
 ```
-
-Lints Javascript
+<br/>
+Runs CSS and JS tasks in production mode
 
 ```shell
-npm run dev:lint:javascript
+ npm run prod:code:generate
 ```
+<br/>
 
-Lints CSS
+### Additional Scripts
+
+Runs CSS and JS linting tasks
 
 ```shell
-npm run dev:lint:css
+ npm run lint
 ```
+<br/>
 
-### Individual Watchers
-
-Compiles PCSS to CSS
+Runs Assets generation tasks (Images, spritesheet, favicons...)
 
 ```shell
-npm run dev:watch:css
+ npm run prod:assets:generate
 ```
+<br/>
 
-Minifies Javascript
+Runs Assets generation watchers (Images, spritesheet, favicons...)
 
 ```shell
-npm run dev:watch:javascript
+ npm run prod:assets:watch
 ```
+<br/>
 
 ## Configuration
 

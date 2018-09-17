@@ -150,3 +150,5 @@ typings/
 .env
 
 .vscode/
+/css/maps
+/js/maps
