@@ -17,7 +17,6 @@
 \*------------------------------------------------------------*/
 
 var gulp = require('gulp'),
-    del = require('del'),
     $ = require('gulp-load-plugins')({ lazy: true }),
     cssnano = require('cssnano'),
     atImport = require('postcss-easy-import'),
@@ -134,16 +133,6 @@ gulp.task('compile-css', ['lint-css'], function () {
 });
 
 /*------------------------------------------------------------*\
-                TASK - CLEAN OUTPUT FOLDERS
-\*------------------------------------------------------------*/
-gulp.task('clean-output', ['lint-css'], function (done) {
-    clean('./' + config.fonts.output + '**/*.*', done);
-    clean('./' + config.css.output + '**/*.*', done);
-    clean('./' + config.javascript.output + '**/*.*', done);
-    clean('./' + config.images.output + '**/*.*', done);
-});
-
-/*------------------------------------------------------------*\
                  WATCHER - GENERATE SPRITESHEET
 \*------------------------------------------------------------*/
 
@@ -247,11 +236,6 @@ function log(msg) {
     } else {
         $.util.log($.util.colors.blue(msg));
     }
-}
-
-function clean(path, done) {
-    log('Cleaning: ' + $.util.colors.blue(path));
-    del(path, done);
 }
 
 function handleError(e) {
