@@ -1,0 +1,29 @@
+.icon {
+    font-size: 10px;
+}
+
+.icon:before {
+    content:' ';
+    vertical-align:middle;
+    display: inline-block;
+    background-image: url("../images/spritesheet/sprites-min.svg");
+    background-repeat: no-repeat;
+    background-size: 2.1em 2.1em;
+}
+
+.no-svg .icon:before {
+    background-image: url("../images/spritesheet/sprites-min.png");
+}
+
+
+
+  .icon.empty:before {
+      background-position: -1em -1em;
+      width: 0.1em;
+      height: 0.1em;
+  }
+
+
+
+
+
