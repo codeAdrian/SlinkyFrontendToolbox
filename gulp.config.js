@@ -5,6 +5,8 @@ module.exports = function() {
 				"---------------------------------------------------------------------"
 		},
 
+		browsers: ["last 3 versions", "not ie < 10", "safari >=5"],
+
 		fonts: {
 			input: "./src/fonts/**/*.*",
 			output: "./fonts/"
@@ -54,11 +56,11 @@ module.exports = function() {
 			inputMain: "./src/css/**/[^_]*.{css,pcss}",
 			inputAll: "./src/css/**/*.{css,pcss}",
 			excludeVendor: "!src/css/vendor/**/*",
-            output: "./css/",
+			output: "./css/",
 			config: {
 				atImport: { extensions: [".css", ".pcss"], prefix: "_" },
 				postcssPresetEnv: {
-					browsers: ["last 3 versions", "not ie<10"],
+					autoprefixer: false,
 					features: {
 						"nesting-rules": true
 					}
@@ -69,8 +71,8 @@ module.exports = function() {
 
 		javascript: {
 			input: "./src/js/**/*.js",
-            exclude: ["!./src/js/vendor/**/*.js"],
-            excludeSourcemaps: ["!./src/js/maps/*"],
+			exclude: ["!./src/js/vendor/**/*.js"],
+			excludeSourcemaps: ["!./src/js/maps/*"],
 			output: "./js/",
 			rename: {
 				suffix: ".min"

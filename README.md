@@ -100,7 +100,6 @@ Runs CSS and JS watcher in development mode
 ```shell
  npm run dev:code:watch
 ```
-<br/>
 
 #### Production
 
@@ -132,7 +131,6 @@ Runs CSS and JS tasks in development mode
 ```shell
  npm run dev:code:generate
 ```
-<br/>
 
 #### Production
 
