@@ -24,6 +24,7 @@ var gulp = require("gulp"),
 	lost = require("lost"),
 	mixins = require("postcss-mixins"),
 	postcssPresetEnv = require("postcss-preset-env");
+	autoprefixer = require('autoprefixer');
 
 var config = require("./gulp.config")();
 
@@ -266,9 +267,9 @@ gulp.task("dev:css:compile", ["slinky:css:lint"], function() {
 	var plugins = [
 		atImport(config.css.config.atImport),
 		mixins,
-		lost,
 		postcssPresetEnv(config.css.config.postcssPresetEnv),
-		cssnano(config.css.config.cssNano)
+		lost,
+		autoprefixer(config.browsers)
 	];
 	return gulp
 		.src(config.css.inputMain)
@@ -361,8 +362,9 @@ gulp.task("prod:css:compile", ["slinky:css:lint"], function() {
 	var plugins = [
 		atImport(config.css.config.atImport),
 		mixins,
-		lost,
 		postcssPresetEnv(config.css.config.postcssPresetEnv),
+		lost,
+		autoprefixer(config.browsers),
 		cssnano(config.css.config.cssNano)
 	];
 	return gulp

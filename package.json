@@ -1,6 +1,6 @@
 {
 	"name": "slinky-frontend-toolbox",
-	"version": "3.5.0",
+	"version": "3.5.1",
 	"license": "(MIT OR Apache-2.0)",
 	"repository": {
 		"type": "git",
@@ -26,6 +26,7 @@
 		"prod:watch": "gulp"
 	},
 	"devDependencies": {
+		"autoprefixer": "^9.1.5",
 		"cssnano": "^4.1.0",
 		"gulp": "^3.9.1",
 		"gulp-cli": "^2.0.1",
