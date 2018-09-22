@@ -14,13 +14,12 @@
 
 .hero__column {
     flex-basis: 50%;
-    max-width: calc((630 / 16) * 1rem);
     padding: 2em;
 }
 
 .hero__bannerWrapper {
     @mixin absolute 0, -60%, auto, 0;
-    transform: rotateZ(45deg);
+    transform: rotateZ(-135deg);
 }
 
 .hero__column--decoration {
@@ -30,9 +29,9 @@
 }
 
 .hero__column--info {
-    transform: translateY(-100vh);
+    transform: translateX(-100vw);
     background-color: rgba(7, 47, 79, 0.7);
-    animation-name: animation-falling;
+    animation-name: slide-left;
     animation-duration: 1s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
@@ -40,8 +39,11 @@
 
 .hero__inner {
     opacity: 0;
+    max-width: calc((630 / 16) * 1rem);
+    margin-right: 0;
+    margin-left: auto;
     animation-name: fade-in;
-    animation-delay: 1s;
+    animation-delay: 0.9s;
     animation-duration: 2s;
     animation-fill-mode: forwards;
     animation-timing-function: ease;
@@ -103,11 +105,6 @@
     text-align: center;
 }
 
-.getStarted__text {
-    padding-top: 1em;
-    padding-bottom: 3em;
-}
-
 .getStarted__aside {
     transform: skewY(10deg);
     position: relative;
@@ -152,4 +149,21 @@
 
 .getStarted__aside--right {
     transform: skewY(-10deg) scale(-1, 1);
+}
+
+.getStarted__text {
+    padding: 1em;
+    margin-bottom: 3em;
+    font-size: calc((18 / 16) * 1rem);
+    line-height: calc((24 / 16) * 1rem);
+    background-color: rgba(7, 47, 79, 0.7);
+    font-family: 'Lucida Console', Monaco, monospace;
+}
+
+.getStarted__buttonWrapper {
+    margin-bottom: 2em;
+}
+
+.getStarted__text--last {
+    margin-bottom: 0;
 }
