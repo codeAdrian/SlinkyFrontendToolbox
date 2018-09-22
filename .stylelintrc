@@ -6,7 +6,7 @@
       "ignore": ["stylelint-commands", "after-comment"]
     } ],
     "declaration-colon-space-after": "always",
-    "indentation": ["tab", {
+    "indentation": [4, {
       "except": ["value"]
     }],
     "max-empty-lines": 2,
@@ -14,6 +14,6 @@
       "except": ["first-nested"],
       "ignore": ["after-comment"]
     } ],
-    "unit-whitelist": ["em", "rem", "%"]
+    "unit-whitelist": ["em", "rem", "%", "deg", "vh","s"]
   }
 }

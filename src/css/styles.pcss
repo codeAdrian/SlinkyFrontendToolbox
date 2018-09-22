@@ -17,20 +17,31 @@
 							VENDOR
 \*------------------------------------------------------------*/
 
-@import "./vendor/normalize.pcss";
-@import "./vendor/sprites.pcss";
+@import './vendor/normalize.pcss';
+@import './vendor/sprites.pcss';
 
 /*------------------------------------------------------------*\
 							HELPERS
 \*------------------------------------------------------------*/
 
-@import "./helpers/mixins.pcss";
+@import './helpers/variables.pcss';
+@import './helpers/mixins.pcss';
+
+/*------------------------------------------------------------*\
+							BASE
+\*------------------------------------------------------------*/
+
+@import './base/typography.pcss';
+@import './base/animations.pcss';
 
 /*------------------------------------------------------------*\
 							COMPONENTS
 \*------------------------------------------------------------*/
 
-@import "./components/forms.pcss";
-@import "./components/media.pcss";
-@import "./components/page.pcss";
-@import "./components/tables.pcss";
+@import './components/box.pcss';
+@import './components/banners.pcss';
+@import './components/container.pcss';
+@import './components/forms.pcss';
+@import './components/media.pcss';
+@import './components/page.pcss';
+@import './components/tables.pcss';
