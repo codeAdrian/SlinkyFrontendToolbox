@@ -68,6 +68,15 @@
     padding: 2em 1.75em;
 }
 
+.features__col ul {
+    margin: 0;
+    padding-left: 1em;
+}
+
+.features__col li {
+    padding-bottom: 0.8em;
+}
+
 .features__icon {
     font-size: 4em;
     padding-bottom: 0.4em;
@@ -92,7 +101,7 @@
 }
 
 .features__col--images {
-    background-color: var(--color__tertiary);
+    background-color: var(--color__tertiary--darker);
 }
 
 .getStarted {
@@ -172,4 +181,123 @@
 
 .getStarted__title {
     font-size: 3.5rem;
+}
+
+.info {
+    display: flex;
+    color: var(--color__grayscale--white);
+}
+
+.info__col {
+    flex-basis: 50%;
+    display: flex;
+}
+
+.info__col--split {
+    display: flex;
+    flex-direction: column;
+}
+
+.info__split {
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info__content {
+    padding: 2em;
+}
+
+.info__content h2 {
+    font-size: 3em;
+}
+
+.info__content ul {
+    margin: 0;
+    padding-left: 1.25em;
+}
+
+.info__content li {
+    padding-bottom: 0.5em;
+}
+
+.info__content--about {
+    background-color: var(--color__cta);
+}
+
+.info__content--docs {
+    background-color: var(--color__primary);
+}
+
+.info__content--features {
+    background-color: var(--color__tertiary);
+    text-align: left;
+}
+
+.socialLinks {
+    list-style: none;
+    display: flex;
+    padding-left: 0;
+    justify-content: center;
+}
+
+.socialLinks__item {
+    padding-right: 1em;
+    padding-left: 1em;
+}
+
+.socialLinks__icon {
+    font-size: 1.5em;
+}
+
+.socialLinks__link {
+    display: inline-block;
+    color: var(--color__secondary);
+    transition: color 0.2s ease;
+}
+
+.socialLinks__link:hover {
+    color: var(--color__grayscale--white);
+}
+
+.info__link {
+    display: inline-block;
+    color: var(--color__secondary);
+    transition: color 0.2s ease;
+    font-weight: bold;
+}
+
+.info__link:hover {
+    color: var(--color__grayscale--white);
+}
+
+.createdWith {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.createdWith__cols {
+    max-width: calc((1024 / 16) * 1rem);
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.createdWith__col {
+    flex-basis: 48%;
+    padding-bottom: 1.5em;
+}
+
+.createWith__title {
+    font-size: 3em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    color: var(--color__grayscale--white);
+    text-align: center;
 }
