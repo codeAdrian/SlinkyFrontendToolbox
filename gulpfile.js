@@ -33,6 +33,24 @@ var config = require("./gulpconfig")();
                       CUSTOM FUNCTIONS
 \*------------------------------------------------------------*/
 
+var welcome = function() {
+    log(
+        "\n\n    Thank you for using \n\n" +
+            "     ▄████████  ▄█        ▄█  ███▄▄▄▄      ▄█   ▄█▄ ▄██   ▄  \n" +
+            "    ███    ███ ███       ███  ███▀▀▀██▄   ███ ▄███▀ ███   ██▄\n" +
+            "    ███    █▀  ███       ███▌ ███   ███   ███▐██▀   ███▄▄▄███\n" +
+            "    ███        ███       ███▌ ███   ███  ▄█████▀    ▀▀▀▀▀▀███\n" +
+            "  ▀███████████ ███       ███▌ ███   ███ ▀▀█████▄    ▄██   ███\n" +
+            "           ███ ███       ███  ███   ███   ███▐██▄   ███   ███\n" +
+            "     ▄█    ███ ███▌    ▄ ███  ███   ███   ███ ▀███▄ ███   ███\n" +
+            "   ▄████████▀  █████▄▄██ █▀    ▀█   █▀    ███   ▀█▀  ▀█████▀ \n" +
+            "\n    Created by: Adrian Bece (https://codeAdrian.github.io)" +
+            "\n"
+    );
+};
+
+gulp.task("slinky:welcome", welcome);
+
 /**
  * Handle Promise Rejection errors
  */
@@ -163,6 +181,49 @@ gulp.task(
 
 /* DEVELOPMENT */
 
+var cssCompileDev = function() {
+    var plugins = [
+        atImport(config.css.config.atImport),
+        mixins,
+        postcssPresetEnv(config.css.config.postcssPresetEnv),
+        lost,
+        autoprefixer(config.browsers),
+        mqpacker()
+    ];
+    return gulp
+        .src(config.css.inputMain)
+        .pipe($.sourcemaps.init())
+        .pipe($.sourcemaps.identityMap())
+        .pipe($.postcss(plugins))
+        .pipe(
+            $.rename({
+                extname: ".css"
+            })
+        )
+        .pipe($.sourcemaps.write(config.sourcemaps.folder))
+        .pipe(gulp.dest(config.css.output));
+};
+
+cssCompileDev.displayName = "CSS Compiler (Dev)";
+
+gulp.task(
+    "css:compile:dev",
+    gulp.series(gulp.parallel("css:lint"), cssCompileDev)
+);
+
+var cssWatchDev = function() {
+    return gulp
+        .watch([config.css.inputAll], gulp.series("css:compile:dev"))
+        .on("change", fileLogger);
+};
+
+cssWatchProd.displayName = "CSS Watcher (Dev)";
+
+gulp.task(
+    "css:watch:dev",
+    gulp.series(gulp.parallel("css:compile:dev"), cssWatchDev)
+);
+
 /*------------------------------------------------------------*\
                         JAVASCRIPT TASKS
 \*------------------------------------------------------------*/
@@ -211,6 +272,37 @@ gulp.task(
 );
 
 /* DEVELOPMENT */
+
+var jsCompileDev = function() {
+    return gulp
+        .src([config.javascript.input])
+        .pipe($.sourcemaps.init())
+        .pipe($.sourcemaps.identityMap())
+        .pipe($.rename(config.javascript.rename))
+        .pipe($.uglify().on("error", handleError))
+        .pipe($.sourcemaps.write(config.sourcemaps.folder))
+        .pipe(gulp.dest(config.javascript.output));
+};
+
+jsCompileDev.displayName = "Javascript Compiler (Dev)";
+
+gulp.task(
+    "js:compile:dev",
+    gulp.series(gulp.parallel("js:lint"), jsCompileDev)
+);
+
+var jsWatchDev = function() {
+    return gulp
+        .watch([config.javascript.input], gulp.series("js:compile:dev"))
+        .on("change", fileLogger);
+};
+
+jsWatchDev.displayName = "Javascript Watcher (Dev)";
+
+gulp.task(
+    "js:watch:dev",
+    gulp.series(gulp.parallel("js:compile:dev"), jsWatchDev)
+);
 
 /*------------------------------------------------------------*\
                         ASSETS TASKS
@@ -261,10 +353,22 @@ gulp.task(
     "watch:production",
     gulp.series(
         gulp.parallel(
+            "slinky:welcome",
             "css:watch:production",
             "js:watch:production",
             "assets:images:watch"
-        ),
-        cssWatchProd
+        )
+    )
+);
+
+gulp.task(
+    "watch:dev",
+    gulp.series(
+        gulp.parallel(
+            "slinky:welcome",
+            "css:watch:dev",
+            "js:watch:dev",
+            "assets:images:watch"
+        )
     )
 );

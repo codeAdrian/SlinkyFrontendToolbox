@@ -13,7 +13,10 @@
     },
     "scripts": {
         "setup": "npm install",
-        "gulp": "gulp watch:production"
+        "watch:production": "gulp watch:production",
+        "watch:dev": "gulp watch:dev",
+        "generate:favicon": "gulp assets:favicon",
+        "generate:images": "gulp assets:images"
     },
     "devDependencies": {
         "autoprefixer": "^9.4.6",
