@@ -1,16 +1,18 @@
 /*
- * ███████╗██╗     ██╗███╗   ██╗██╗  ██╗██╗   ██╗
- * ██╔════╝██║     ██║████╗  ██║██║ ██╔╝╚██╗ ██╔╝
- * ███████╗██║     ██║██╔██╗ ██║█████╔╝  ╚████╔╝
- * ╚════██║██║     ██║██║╚██╗██║██╔═██╗   ╚██╔╝
- * ███████║███████╗██║██║ ╚████║██║  ██╗   ██║
- * ╚══════╝╚══════╝╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝   ╚═╝
+ *     ▄████████  ▄█        ▄█  ███▄▄▄▄      ▄█   ▄█▄ ▄██   ▄
+ *    ███    ███ ███       ███  ███▀▀▀██▄   ███ ▄███▀ ███   ██▄
+ *    ███    █▀  ███       ███▌ ███   ███   ███▐██▀   ███▄▄▄███
+ *    ███        ███       ███▌ ███   ███  ▄█████▀    ▀▀▀▀▀▀███
+ *  ▀███████████ ███       ███▌ ███   ███ ▀▀█████▄    ▄██   ███
+ *           ███ ███       ███  ███   ███   ███▐██▄   ███   ███
+ *     ▄█    ███ ███▌    ▄ ███  ███   ███   ███ ▀███▄ ███   ███
+ *   ▄████████▀  █████▄▄██ █▀    ▀█   █▀    ███   ▀█▀  ▀█████▀
  *
- * Frontend Toolbox       Created By: Adrian Bece
+ *        Frontend Toolbox       Created By: Adrian Bece
  *
- *                        adrianbece.code@gmail.com
- *                        codeadrian.github.io
- *                        @AdrianBDesigns
+ *                               adrianbece.code@gmail.com
+ *                               codeadrian.github.io
+ *                               @AdrianBDesigns
  */
 
 /*------------------------------------------------------------*\
@@ -102,6 +104,8 @@ function fileLogger(file) {
                       		CSS TASKS
 \*------------------------------------------------------------*/
 
+/* SHARED */
+
 var cssLint = function() {
     return gulp.src([config.css.inputAll, config.css.excludeVendor]).pipe(
         $.stylelint({
@@ -113,6 +117,8 @@ var cssLint = function() {
 cssLint.displayName = "CSS Linter";
 
 gulp.task("css:lint", cssLint);
+
+/* PRODUCTION */
 
 var cssCompileProd = function() {
     var plugins = [
@@ -155,9 +161,13 @@ gulp.task(
     gulp.series(gulp.parallel("css:compile:production"), cssWatchProd)
 );
 
+/* DEVELOPMENT */
+
 /*------------------------------------------------------------*\
-                      		JS TASKS
+                        JAVASCRIPT TASKS
 \*------------------------------------------------------------*/
+
+/* SHARED */
 
 var jsLint = function() {
     return gulp
@@ -169,6 +179,8 @@ var jsLint = function() {
 jsLint.displayName = "Javascript Linter";
 
 gulp.task("js:lint", jsLint);
+
+/* PRODUCTION */
 
 var jsCompileProd = function() {
     return gulp
@@ -198,12 +210,61 @@ gulp.task(
     gulp.series(gulp.parallel("js:compile:production"), jsWatchProd)
 );
 
-/* GLOBAL TASKS */
+/* DEVELOPMENT */
+
+/*------------------------------------------------------------*\
+                        ASSETS TASKS
+\*------------------------------------------------------------*/
+
+var assetsFavicon = function() {
+    return gulp
+        .src(config.favicons.input)
+        .pipe($.favicons(config.favicons.config))
+        .on("error", handleError)
+        .pipe(gulp.dest(config.favicons.output));
+};
+
+assetsFavicon.displayName = "Generate Favicon";
+
+gulp.task("assets:favicon", assetsFavicon);
+
+var assetsImages = function() {
+    return gulp
+        .src(config.images.input)
+        .pipe($.imagemin().on("error", handleError))
+        .pipe($.rename(config.images.rename))
+        .pipe(gulp.dest(config.images.output));
+};
+
+assetsImages.displayName = "Minifying Images";
+
+gulp.task("assets:images", assetsImages);
+
+var assetsImagesWatch = function() {
+    return gulp
+        .watch([config.images.input], gulp.series("assets:images"))
+        .on("change", fileLogger);
+};
+
+assetsImagesWatch.displayName = "Minifying Images";
+
+gulp.task(
+    "assets:images:watch",
+    gulp.series(gulp.parallel("assets:images"), assetsImagesWatch)
+);
+
+/*------------------------------------------------------------*\
+                        GLOBAL TASKS
+\*------------------------------------------------------------*/
 
 gulp.task(
     "watch:production",
     gulp.series(
-        gulp.parallel("css:watch:production", "js:watch:production"),
+        gulp.parallel(
+            "css:watch:production",
+            "js:watch:production",
+            "assets:images:watch"
+        ),
         cssWatchProd
     )
 );

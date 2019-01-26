@@ -13,7 +13,7 @@
     },
     "scripts": {
         "setup": "npm install",
-        "gulp": "gulp watch:production"
+        "gulp": "gulp assets:images:watch"
     },
     "devDependencies": {
         "autoprefixer": "^9.4.6",
@@ -32,7 +32,6 @@
         "gulp-sourcemaps": "^2.6.4",
         "gulp-strip-comments": "^2.5.2",
         "gulp-stylelint": "^7.0.0",
-        "gulp-svg2png": "^2.0.2",
         "gulp-uglify": "^3.0.1",
         "gulp-util": "^3.0.8",
         "lost": "^8.3.0",
