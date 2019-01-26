@@ -1,58 +1,45 @@
 {
-	"name": "slinky-frontend-toolbox",
-	"version": "3.5.1",
-	"license": "(MIT OR Apache-2.0)",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/codeAdrian/SlinkyFrontendToolbox"
-	},
-	"author": {
-		"name": "Adrian Bece",
-		"email": "adrianbece.code@gmail.com",
-		"url": "http://codeadrian.github.io"
-	},
-	"scripts": {
-		"setup": "npm install",
-		"lint": "gulp slinky:lint",
-		"dev:code:generate": "gulp dev:code:generate",
-		"dev:code:watch": "gulp dev:code:watch",
-		"prod:code:generate": "gulp prod:code:generate",
-		"prod:code:watch": "gulp prod:code:watch",
-		"prod:assets:generate": "gulp prod:assets:generate",
-		"prod:assets:watch": "gulp prod:assets:watch",
-		"dev:compile": "gulp slinky:dev:compile",
-		"dev:watch": "gulp slinky:dev:watch",
-		"prod:compile": "gulp slinky:prod:compile",
-		"prod:watch": "gulp"
-	},
-	"devDependencies": {
-		"autoprefixer": "^9.1.5",
-		"cssnano": "^4.1.0",
-		"gulp": "^3.9.1",
-		"gulp-cli": "^2.0.1",
-		"gulp-favicons": "^2.2.7",
-		"gulp-filter": "^5.1.0",
-		"gulp-imagemin": "^4.1.0",
-		"gulp-jscs": "^4.1.0",
-		"gulp-jshint": "^2.1.0",
-		"gulp-load-plugins": "^1.5.0",
-		"gulp-postcss": "^8.0.0",
-		"gulp-print": "^5.0.0",
-		"gulp-rename": "^1.4.0",
-		"gulp-sourcemaps": "^2.6.4",
-		"gulp-strip-comments": "^2.5.2",
-		"gulp-stylelint": "^7.0.0",
-		"gulp-svg-sprites": "^4.1.2",
-		"gulp-svg2png": "^2.0.2",
-		"gulp-uglify": "^3.0.1",
-		"gulp-util": "^3.0.8",
-		"jshint": "^2.9.6",
-		"jshint-stylish": "^2.2.1",
-		"lost": "^8.3.0",
-		"map-stream": "0.0.7",
-		"postcss-easy-import": "^3.0.0",
-		"postcss-mixins": "^6.2.0",
-		"postcss-preset-env": "^5.3.0",
-		"stylelint": "^9.5.0"
-	}
+    "name": "slinky-frontend-toolbox",
+    "version": "4.0.0",
+    "license": "(MIT OR Apache-2.0)",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/codeAdrian/SlinkyFrontendToolbox"
+    },
+    "author": {
+        "name": "Adrian Bece",
+        "email": "adrianbece.code@gmail.com",
+        "url": "http://codeadrian.github.io"
+    },
+    "scripts": {
+        "setup": "npm install",
+        "gulp": "gulp watch:production"
+    },
+    "devDependencies": {
+        "autoprefixer": "^9.4.6",
+        "css-mqpacker": "^7.0.0",
+        "cssnano": "^4.1.8",
+        "gulp": "^4.0.0",
+        "gulp-cli": "^2.0.1",
+        "gulp-eslint": "^5.0.0",
+        "gulp-favicons": "^2.3.0",
+        "gulp-filter": "^5.1.0",
+        "gulp-imagemin": "^5.0.3",
+        "gulp-load-plugins": "^1.5.0",
+        "gulp-postcss": "^8.0.0",
+        "gulp-print": "^5.0.0",
+        "gulp-rename": "^1.4.0",
+        "gulp-sourcemaps": "^2.6.4",
+        "gulp-strip-comments": "^2.5.2",
+        "gulp-stylelint": "^7.0.0",
+        "gulp-svg2png": "^2.0.2",
+        "gulp-uglify": "^3.0.1",
+        "gulp-util": "^3.0.8",
+        "lost": "^8.3.0",
+        "map-stream": "0.0.7",
+        "postcss-easy-import": "^3.0.0",
+        "postcss-mixins": "^6.2.1",
+        "postcss-preset-env": "^5.3.0",
+        "stylelint": "^9.10.1"
+    }
 }

@@ -8,11 +8,11 @@
  */
 
 @define-mixin clearfix {
-	&::after {
-		display: block;
-		clear: both;
-		content: "";
-	}
+    &::after {
+        display: block;
+        clear: both;
+        content: "";
+    }
 }
 
 /*------------------------------------------------------------*\
@@ -25,11 +25,11 @@
  */
 
 @define-mixin position $position, $top, $right, $bottom, $left {
-	position: $position;
-	top: $top;
-	right: $right;
-	bottom: $bottom;
-	left: $left;
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
 }
 
 /*
@@ -40,7 +40,7 @@
  */
 
 @define-mixin absolute $top, $right, $bottom, $left {
-	@mixin position absolute, $top, $right, $bottom, $left;
+    @mixin position absolute, $top, $right, $bottom, $left;
 }
 
 /*
@@ -51,5 +51,5 @@
  */
 
 @define-mixin fixed $top, $right, $bottom, $left {
-	@mixin position fixed, $top, $right, $bottom, $left;
+    @mixin position fixed, $top, $right, $bottom, $left;
 }
