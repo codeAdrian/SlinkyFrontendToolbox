@@ -16,7 +16,10 @@
         "watch:production": "gulp watch:production",
         "watch:dev": "gulp watch:dev",
         "generate:favicon": "gulp assets:favicon",
-        "generate:images": "gulp assets:images"
+        "generate:images": "gulp assets:images",
+        "generate:dev": "gulp compile:dev",
+        "generate:production": "gulp compile:production",
+        "run:lint": "gulp lint"
     },
     "devDependencies": {
         "autoprefixer": "^9.4.6",
@@ -36,6 +39,7 @@
         "gulp-util": "^3.0.8",
         "lost": "^8.3.0",
         "map-stream": "0.0.7",
+        "normalize.css": "^8.0.1",
         "postcss-easy-import": "^3.0.0",
         "postcss-mixins": "^6.2.1",
         "postcss-preset-env": "^6.5.0",

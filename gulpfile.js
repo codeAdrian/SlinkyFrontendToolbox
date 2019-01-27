@@ -22,9 +22,11 @@
 var gulp = require("gulp"),
     $ = require("gulp-load-plugins")({ lazy: true }),
     cssnano = require("cssnano"),
-    lost = require("lost"),
-    mixins = require("postcss-mixins"),
-    postcssPresetEnv = require("postcss-preset-env");
+    mqpacker = require("css-mqpacker");
+(atImport = require("postcss-easy-import")),
+    (lost = require("lost")),
+    (mixins = require("postcss-mixins")),
+    (postcssPresetEnv = require("postcss-preset-env"));
 autoprefixer = require("autoprefixer");
 
 var config = require("./gulpconfig")();
@@ -34,34 +36,30 @@ var config = require("./gulpconfig")();
 \*------------------------------------------------------------*/
 
 var welcome = function() {
-    log(
-        "\n\n    Thank you for using \n\n" +
-            "     ▄████████  ▄█        ▄█  ███▄▄▄▄      ▄█   ▄█▄ ▄██   ▄  \n" +
-            "    ███    ███ ███       ███  ███▀▀▀██▄   ███ ▄███▀ ███   ██▄\n" +
-            "    ███    █▀  ███       ███▌ ███   ███   ███▐██▀   ███▄▄▄███\n" +
-            "    ███        ███       ███▌ ███   ███  ▄█████▀    ▀▀▀▀▀▀███\n" +
-            "  ▀███████████ ███       ███▌ ███   ███ ▀▀█████▄    ▄██   ███\n" +
-            "           ███ ███       ███  ███   ███   ███▐██▄   ███   ███\n" +
-            "     ▄█    ███ ███▌    ▄ ███  ███   ███   ███ ▀███▄ ███   ███\n" +
-            "   ▄████████▀  █████▄▄██ █▀    ▀█   █▀    ███   ▀█▀  ▀█████▀ \n" +
-            "\n    Created by: Adrian Bece (https://codeAdrian.github.io)" +
-            "\n"
-    );
+    return new Promise(function(resolve, reject) {
+        log(
+            "\n\n    Thank you for using \n\n" +
+                "     ▄████████  ▄█        ▄█  ███▄▄▄▄      ▄█   ▄█▄ ▄██   ▄  \n" +
+                "    ███    ███ ███       ███  ███▀▀▀██▄   ███ ▄███▀ ███   ██▄\n" +
+                "    ███    █▀  ███       ███▌ ███   ███   ███▐██▀   ███▄▄▄███\n" +
+                "    ███        ███       ███▌ ███   ███  ▄█████▀    ▀▀▀▀▀▀███\n" +
+                "  ▀███████████ ███       ███▌ ███   ███ ▀▀█████▄    ▄██   ███\n" +
+                "           ███ ███       ███  ███   ███   ███▐██▄   ███   ███\n" +
+                "     ▄█    ███ ███▌    ▄ ███  ███   ███   ███ ▀███▄ ███   ███\n" +
+                "   ▄████████▀  █████▄▄██ █▀    ▀█   █▀    ███   ▀█▀  ▀█████▀ \n" +
+                "\n    Created by: Adrian Bece (https://codeAdrian.github.io)" +
+                "\n"
+        );
+        resolve();
+    });
 };
 
 gulp.task("slinky:welcome", welcome);
 
-/**
- * Handle Promise Rejection errors
- */
 process.on("unhandledRejection", error => {
     throw error;
 });
 
-/**
- * @param {String} msg
- * Logs messages in terminal
- */
 function log(msg) {
     if (typeof msg === "object") {
         for (var item in msg) {
@@ -74,10 +72,6 @@ function log(msg) {
     }
 }
 
-/**
- * @param {Event} e
- * Logs code errors in terminal
- */
 function handleError(e) {
     log(config.gulp.consoleDivider);
     log("Warning: Code is not valid");
@@ -89,29 +83,6 @@ function handleError(e) {
     log("Please check terminal for info on warnings and errors ");
     log(config.gulp.consoleDivider);
     this.emit("end");
-}
-var gulp = require("gulp"),
-    $ = require("gulp-load-plugins")({ lazy: true }),
-    cssnano = require("cssnano"),
-    mqpacker = require("css-mqpacker");
-(atImport = require("postcss-easy-import")),
-    (lost = require("lost")),
-    (mixins = require("postcss-mixins")),
-    (postcssPresetEnv = require("postcss-preset-env"));
-autoprefixer = require("autoprefixer");
-
-var config = require("./gulpconfig.js")();
-
-function log(msg) {
-    if (typeof msg === "object") {
-        for (var item in msg) {
-            if (msg.hasOwnProperty(item)) {
-                $.util.log($.util.colors.blue(msg[item]));
-            }
-        }
-    } else {
-        $.util.log($.util.colors.blue(msg));
-    }
 }
 
 function fileLogger(file) {
@@ -349,6 +320,8 @@ gulp.task(
                         GLOBAL TASKS
 \*------------------------------------------------------------*/
 
+gulp.task("lint", gulp.series(gulp.parallel("css:lint", "js:lint")));
+
 gulp.task(
     "watch:production",
     gulp.series(
@@ -369,6 +342,30 @@ gulp.task(
             "css:watch:dev",
             "js:watch:dev",
             "assets:images:watch"
+        )
+    )
+);
+
+gulp.task(
+    "compile:dev",
+    gulp.series(
+        gulp.parallel(
+            "slinky:welcome",
+            "css:compile:dev",
+            "js:compile:dev",
+            "assets:images"
+        )
+    )
+);
+
+gulp.task(
+    "compile:production",
+    gulp.series(
+        gulp.parallel(
+            "slinky:welcome",
+            "css:compile:production",
+            "js:compile:production",
+            "assets:images"
         )
     )
 );
