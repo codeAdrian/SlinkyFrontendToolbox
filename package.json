@@ -19,7 +19,7 @@
         "generate:images": "gulp assets:images",
         "generate:dev": "gulp compile:dev",
         "generate:production": "gulp compile:production",
-        "run:lint": "gulp lint"
+        "lint": "gulp lint"
     },
     "devDependencies": {
         "autoprefixer": "^9.4.6",
